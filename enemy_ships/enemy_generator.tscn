@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr2hsirv1y2j3"]
+
+[ext_resource type="Script" path="res://enemy_ships/enemy_generator.gd" id="1_vmxvd"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="2_5n1vp"]
+
+[node name="EnemyGenerator" type="Node2D"]
+script = ExtResource("1_vmxvd")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("2_5n1vp")
+
+[node name="SquadOneSpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="SquadTwoSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 10.0
+one_shot = true
+
+[node name="SquadThreeSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 15.0
+one_shot = true

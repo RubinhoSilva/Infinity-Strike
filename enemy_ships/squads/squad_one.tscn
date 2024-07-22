@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://s1nqqmdh76yj"]
+
+[ext_resource type="PackedScene" uid="uid://cnyo56w6obq7q" path="res://enemy_ships/squads/squad.tscn" id="1_j15w0"]
+[ext_resource type="PackedScene" uid="uid://cc436mt0iwl8c" path="res://enemy_ships/enemy_one.tscn" id="2_xnk5f"]
+
+[node name="SquadOne" instance=ExtResource("1_j15w0")]
+
+[node name="EnemyOne" parent="." index="0" instance=ExtResource("2_xnk5f")]
+position = Vector2(8, 7)

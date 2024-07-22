@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://cybvmmv4i647a"]
+
+[ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
+[ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/squad_one.tscn" id="1_kqohh"]
+[ext_resource type="Script" path="res://world.gd" id="1_n0vdm"]
+[ext_resource type="PackedScene" uid="uid://dqrdumc4i5var" path="res://enemy_ships/squads/squad_two.tscn" id="3_ayg6h"]
+[ext_resource type="PackedScene" uid="uid://dr2hsirv1y2j3" path="res://enemy_ships/enemy_generator.tscn" id="3_qcq1c"]
+[ext_resource type="PackedScene" uid="uid://b5bne2r1qdaui" path="res://enemy_ships/squads/squad_three.tscn" id="4_n4qrp"]
+[ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="4_punto"]
+[ext_resource type="FontFile" uid="uid://bla6t7bkr7o7g" path="res://fonts/kenney_mini_square.ttf" id="7_my3fh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
+font = ExtResource("7_my3fh")
+font_size = 10
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_n0vdm")
+game_stats = ExtResource("4_punto")
+
+[node name="SquadOne" parent="." instance=ExtResource("1_kqohh")]
+position = Vector2(25, 81)
+
+[node name="Ship" parent="." instance=ExtResource("1_2yr80")]
+position = Vector2(81, 218)
+
+[node name="EnemyGenerator" parent="." instance=ExtResource("3_qcq1c")]
+SquadOneScene = ExtResource("1_kqohh")
+SquadTwoScene = ExtResource("3_ayg6h")
+SquadThreeScene = ExtResource("4_n4qrp")
+game_stats = ExtResource("4_punto")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 159.0
+offset_bottom = 13.0
+text = "SCORE"
+label_settings = SubResource("LabelSettings_fnahk")
+horizontal_alignment = 1
+vertical_alignment = 1
