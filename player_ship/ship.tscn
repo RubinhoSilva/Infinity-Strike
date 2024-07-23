@@ -120,7 +120,7 @@ script = ExtResource("1_mqtmi")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("2_mw50h")
-health = 100
+health = 250
 
 [node name="Anchor" type="Node2D" parent="."]
 

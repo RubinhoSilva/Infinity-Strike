@@ -30,7 +30,7 @@ sprite_frames = SubResource("SpriteFrames_ijrda")
 animation = &"move"
 
 [node name="StatsComponent" parent="." index="1"]
-health = 50
+health = 10
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(2.08165e-12, 10)
@@ -46,9 +46,13 @@ polygon = PackedVector2Array(5, 1, 5, 0, 6, 0, 6, -1, 7, -1, 7, -2, 8, -2, 8, -4
 [node name="SpawnerComponent" parent="." index="10"]
 scene = ExtResource("4_p7f2j")
 
+[node name="ScoreComponent" parent="." index="12"]
+adjust_amount = 1
+
 [node name="LeftMuzzle" type="Marker2D" parent="." index="14"]
 position = Vector2(-4, 4)
 scale = Vector2(0.8, 0.7)
+gizmo_extents = 1000.0
 
 [node name="RightMuzzle" type="Marker2D" parent="." index="15"]
 position = Vector2(4, 4)

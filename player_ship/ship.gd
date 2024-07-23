@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var stats_component: = $StatsComponent as StatsComponent
 @onready var left_muzzle: Marker2D = $LeftMuzzle
 @onready var right_muzzle: Marker2D = $RightMuzzle
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent as SpawnerComponent
@@ -18,6 +19,9 @@ func _ready() -> void:
 		shake_component.tween_shake()
 		#variable_pitch_audio_stream_player.play_with_variance()
 	)
+	
+	stats_component.no_health.connect(queue_free)
+
 
 func _input(event):
 	if event is InputEventKey:
