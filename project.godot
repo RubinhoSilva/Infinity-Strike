@@ -27,6 +27,7 @@ window/stretch/mode="canvas_items"
 
 2d_render/layer_1="player_hurtbox"
 2d_render/layer_2="enemy_hurtbox"
+2d_render/layer_3="enemy_hurtbox"
 
 [rendering]
 

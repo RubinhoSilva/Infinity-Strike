@@ -14,6 +14,7 @@ func _ready():
 	area_entered.connect(_on_hurtbox_entered)
 
 func _on_hurtbox_entered(hurtbox: HurtboxComponent):
+	print(hurtbox)
 	# Make sure the area we are overlapping is a hurtbox
 	if not hurtbox is HurtboxComponent: return
 	# Make sure the hurtbox isn't invincible

@@ -1,12 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://1rq4y08yupft"]
+[gd_scene load_steps=5 format=3 uid="uid://1rq4y08yupft"]
 
 [ext_resource type="PackedScene" uid="uid://bdj3mao5fhbgo" path="res://bonus/bonus.tscn" id="1_a8fdl"]
-[ext_resource type="Texture2D" uid="uid://cqp7pj0e36k26" path="res://assets/bonus/DamageIcon.png" id="2_38xh7"]
 [ext_resource type="Script" path="res://bonus/bonus_damage.gd" id="2_nwtng"]
+[ext_resource type="Texture2D" uid="uid://cqp7pj0e36k26" path="res://assets/bonus/DamageIcon.png" id="3_pkcts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mssh6"]
+radius = 7.0
 
 [node name="BonusDamage" instance=ExtResource("1_a8fdl")]
 script = ExtResource("2_nwtng")
 
-[node name="Icon" parent="." index="0"]
-scale = Vector2(0.0152893, 0.0129089)
-texture = ExtResource("2_38xh7")
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1.90735e-06, 1)
+scale = Vector2(0.0161133, 0.0126953)
+texture = ExtResource("3_pkcts")
+
+[node name="MoveComponent" parent="." index="1" node_paths=PackedStringArray("actor")]
+actor = NodePath("..")
+
+[node name="ScaleComponent" parent="." index="3" node_paths=PackedStringArray("sprite")]
+sprite = NodePath("..")
+
+[node name="FlashComponent" parent="." index="4" node_paths=PackedStringArray("sprite")]
+sprite = NodePath("..")
+
+[node name="HitboxComponent" parent="." index="5"]
+bonus = 101000
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_mssh6")
