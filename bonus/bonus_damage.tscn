@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://1rq4y08yupft"]
+[gd_scene load_steps=4 format=3 uid="uid://1rq4y08yupft"]
 
 [ext_resource type="PackedScene" uid="uid://bdj3mao5fhbgo" path="res://bonus/bonus.tscn" id="1_a8fdl"]
 [ext_resource type="Texture2D" uid="uid://cqp7pj0e36k26" path="res://assets/bonus/DamageIcon.png" id="2_38xh7"]
+[ext_resource type="Script" path="res://bonus/bonus_damage.gd" id="2_nwtng"]
 
 [node name="BonusDamage" instance=ExtResource("1_a8fdl")]
+script = ExtResource("2_nwtng")
 
 [node name="Icon" parent="." index="0"]
 scale = Vector2(0.0152893, 0.0129089)

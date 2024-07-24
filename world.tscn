@@ -38,3 +38,4 @@ vertical_alignment = 1
 
 [node name="BonusDamage" parent="." instance=ExtResource("9_esm2q")]
 position = Vector2(80, 207)
+script = null
