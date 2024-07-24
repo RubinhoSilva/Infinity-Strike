@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://brw8cryu3vxhc"]
+
+[resource]
+metadata/damage = 2.5
+metadata/Health = 250.0
+metadata/ShieldTime = 0
+metadata/Speed = 100.0

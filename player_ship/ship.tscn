@@ -1,14 +1,14 @@
-[gd_scene load_steps=30 format=3 uid="uid://b67qjuigi4dvn"]
+[gd_scene load_steps=31 format=3 uid="uid://b67qjuigi4dvn"]
 
 [ext_resource type="Script" path="res://player_ship/ship.gd" id="1_mqtmi"]
 [ext_resource type="Texture2D" uid="uid://csv6axkat2gqy" path="res://assets/ship.png" id="1_r7y1d"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_ehosm"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="2_mw50h"]
 [ext_resource type="Script" path="res://components/move_input_component.gd" id="3_xfx7j"]
-[ext_resource type="Resource" uid="uid://bo3ig3arec1h6" path="res://player_ship/ship_move_stats.tres" id="4_dgl6u"]
 [ext_resource type="Texture2D" uid="uid://cyrilc23jv0sy" path="res://assets/novos/ships/main/center.png" id="4_msxlj"]
 [ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_vqpx2"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="7_26x81"]
+[ext_resource type="Script" path="res://components/move_stats.gd" id="8_cm7xp"]
 [ext_resource type="PackedScene" uid="uid://3c0cr3714r4k" path="res://projectiles/laser.tscn" id="8_ypby4"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="9_72otb"]
 [ext_resource type="Texture2D" uid="uid://cmfx7uwiptxam" path="res://assets/ship_flame.png" id="10_svgp4"]
@@ -115,6 +115,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Resource" id="Resource_ygh4f"]
+script = ExtResource("8_cm7xp")
+speed = 100
+
 [node name="Ship" type="Node2D"]
 script = ExtResource("1_mqtmi")
 
@@ -145,7 +149,7 @@ actor = NodePath("..")
 
 [node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
 script = ExtResource("3_xfx7j")
-move_stats = ExtResource("4_dgl6u")
+move_stats = SubResource("Resource_ygh4f")
 move_component = NodePath("../MoveComponent")
 
 [node name="PositionClampComponent" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
