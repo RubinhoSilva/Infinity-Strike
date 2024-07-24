@@ -44,11 +44,10 @@ node = NodePath("../AnimatedSprite2D")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 0
 script = ExtResource("7_i0wgq")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 script = ExtResource("8_3xwef")
 damage = 5.0
 

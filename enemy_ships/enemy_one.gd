@@ -10,6 +10,11 @@ func _ready() -> void:
 	super()
 	fire_rate_timer.timeout.connect(fire_lasers)
 	
+	
+	hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
+		print('enemy_one')	
+	)
+	
 	#for state in states.get_children():
 		#state = state as StateComponent
 		#state.disable()

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5bne2r1qdaui" path="res://enemy_ships/squads/squad_three.tscn" id="4_n4qrp"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="4_punto"]
 [ext_resource type="FontFile" uid="uid://bla6t7bkr7o7g" path="res://fonts/kenney_mini_square.ttf" id="7_my3fh"]
-[ext_resource type="PackedScene" uid="uid://5ebgnckvp4kf" path="res://bonus/bonus.tscn" id="9_734uc"]
+[ext_resource type="PackedScene" uid="uid://crvioudkhtmbr" path="res://bonus/bonus_damage.tscn" id="9_b33dq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
@@ -22,6 +22,7 @@ game_stats = ExtResource("4_punto")
 position = Vector2(81, 218)
 
 [node name="EnemyGenerator" parent="." instance=ExtResource("3_qcq1c")]
+visible = false
 SquadOneScene = ExtResource("1_kqohh")
 SquadTwoScene = ExtResource("3_ayg6h")
 SquadThreeScene = ExtResource("4_n4qrp")
@@ -35,5 +36,5 @@ label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bonus" parent="." instance=ExtResource("9_734uc")]
-position = Vector2(-7, 28)
+[node name="BonusDamage" parent="." instance=ExtResource("9_b33dq")]
+position = Vector2(71, 178)

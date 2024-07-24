@@ -171,7 +171,7 @@ script = ExtResource("9_72otb")
 sprite = NodePath("../Anchor")
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
-collision_mask = 0
+collision_mask = 6
 script = ExtResource("12_76ubl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent"]
