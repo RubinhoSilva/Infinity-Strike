@@ -10,7 +10,7 @@ script = ExtResource("1_vmxvd")
 script = ExtResource("2_5n1vp")
 
 [node name="SquadOneSpawnTimer" type="Timer" parent="."]
-wait_time = 1000.0
+wait_time = 0.1
 autostart = true
 
 [node name="SquadTwoSpawnTimer" type="Timer" parent="."]

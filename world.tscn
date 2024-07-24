@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=10 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/squad_one.tscn" id="1_kqohh"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b5bne2r1qdaui" path="res://enemy_ships/squads/squad_three.tscn" id="4_n4qrp"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="4_punto"]
 [ext_resource type="FontFile" uid="uid://bla6t7bkr7o7g" path="res://fonts/kenney_mini_square.ttf" id="7_my3fh"]
-[ext_resource type="PackedScene" uid="uid://1rq4y08yupft" path="res://bonus/bonus_damage.tscn" id="10_0b3k8"]
-[ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="10_qfa7w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
@@ -35,9 +33,3 @@ SquadOneScene = ExtResource("1_kqohh")
 SquadTwoScene = ExtResource("3_ayg6h")
 SquadThreeScene = ExtResource("4_n4qrp")
 game_stats = ExtResource("4_punto")
-
-[node name="Laser" parent="." instance=ExtResource("10_qfa7w")]
-position = Vector2(82, -375)
-
-[node name="BonusDamage" parent="." instance=ExtResource("10_0b3k8")]
-position = Vector2(82, -39)

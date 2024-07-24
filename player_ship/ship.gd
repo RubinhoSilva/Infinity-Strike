@@ -18,8 +18,6 @@ func _ready() -> void:
 		flash_component.flash()
 		shake_component.tween_shake()
 		#variable_pitch_audio_stream_player.play_with_variance()
-		
-		print(hitbox.bonus)
 	)
 	
 	stats_component.no_health.connect(queue_free)
