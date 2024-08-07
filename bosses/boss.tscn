@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmnpmcfnvcdqo"]
+
+[ext_resource type="Script" path="res://components/stats_component.gd" id="1_em654"]
+[ext_resource type="Script" path="res://components/hurtbox_component.gd" id="2_b4jmc"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="3_fvq5y"]
+[ext_resource type="Script" path="res://components/hurt_component.gd" id="4_m7c0j"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="5_xb0v5"]
+[ext_resource type="Script" path="res://components/destroyed_component.gd" id="6_cqq2k"]
+[ext_resource type="Script" path="res://components/score_component.gd" id="7_bh3ws"]
+[ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="8_q1qa5"]
+
+[node name="Boss" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("1_em654")
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_b4jmc")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_fvq5y")
+damage = 5.0
+
+[node name="HurtComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component", "hurtbox_component")]
+script = ExtResource("4_m7c0j")
+stats_component = NodePath("../StatsComponent")
+hurtbox_component = NodePath("../HurtboxComponent")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("5_xb0v5")
+
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats_component", "destroy_effect_spawner_component")]
+script = ExtResource("6_cqq2k")
+actor = NodePath("..")
+stats_component = NodePath("../StatsComponent")
+destroy_effect_spawner_component = NodePath("../SpawnerComponent")
+
+[node name="ScoreComponent" type="Node" parent="."]
+script = ExtResource("7_bh3ws")
+game_stats = ExtResource("8_q1qa5")
