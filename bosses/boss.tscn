@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmnpmcfnvcdqo"]
+[gd_scene load_steps=10 format=3 uid="uid://dmnpmcfnvcdqo"]
 
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_em654"]
+[ext_resource type="Script" path="res://bosses/boss.gd" id="1_w2ps1"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="2_b4jmc"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="3_fvq5y"]
 [ext_resource type="Script" path="res://components/hurt_component.gd" id="4_m7c0j"]
@@ -10,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="8_q1qa5"]
 
 [node name="Boss" type="Node2D"]
+script = ExtResource("1_w2ps1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
