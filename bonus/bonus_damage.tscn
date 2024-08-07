@@ -24,8 +24,5 @@ sprite = NodePath("..")
 [node name="FlashComponent" parent="." index="4" node_paths=PackedStringArray("sprite")]
 sprite = NodePath("..")
 
-[node name="HitboxComponent" parent="." index="5"]
-bonus = 101000
-
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("CircleShape2D_mssh6")
