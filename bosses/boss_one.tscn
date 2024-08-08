@@ -9,3 +9,9 @@
 position = Vector2(82, 27)
 scale = Vector2(0.0730591, 0.0704346)
 texture = ExtResource("2_xtfao")
+
+[node name="LeftMuzzle" type="Marker2D" parent="." index="8"]
+position = Vector2(64, 50)
+
+[node name="RightMuzzle" type="Marker2D" parent="." index="9"]
+position = Vector2(100, 50)
