@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ykegpdavxm5"]
+[gd_scene load_steps=4 format=3 uid="uid://6ykegpdavxm5"]
 
 [ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_8j7k5"]
+[ext_resource type="Script" path="res://bosses/boss_one.gd" id="2_exsp3"]
 [ext_resource type="Texture2D" uid="uid://dm13ii247fxnj" path="res://assets/bosses/one.png" id="2_xtfao"]
 
 [node name="BossOne" instance=ExtResource("1_8j7k5")]
+script = ExtResource("2_exsp3")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(82, 27)

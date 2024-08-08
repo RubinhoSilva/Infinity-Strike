@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2etta6wabot"]
+
+[ext_resource type="PackedScene" uid="uid://c4qxjdbtgdqsx" path="res://projectiles/boss/laser.tscn" id="1_p3mon"]
+[ext_resource type="Texture2D" uid="uid://6vr3ayejaeg3" path="res://assets/bosses/laser_one.png" id="2_3hfwv"]
+
+[node name="LaserOne" instance=ExtResource("1_p3mon")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(91, 23)
+scale = Vector2(0.164062, 0.355469)
+texture = ExtResource("2_3hfwv")
