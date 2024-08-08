@@ -9,16 +9,23 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="MoveComponent" type="Node" parent="."]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("1_y0f4y")
+actor = NodePath("..")
+velocity = Vector2(350, 2.08165e-12)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="ScaleComponent" type="Node" parent="."]
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("2_lgsmu")
+sprite = NodePath("../Sprite2D")
+scale_amount = Vector2(3, 3)
+scale_duration = 1.5
 
-[node name="FlashComponent" type="Node" parent="."]
+[node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("3_rospi")
+sprite = NodePath("../Sprite2D")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 script = ExtResource("4_fiaho")
+damage = 20.0
