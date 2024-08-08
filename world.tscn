@@ -19,6 +19,7 @@ script = ExtResource("1_n0vdm")
 game_stats = ExtResource("4_punto")
 
 [node name="Ship" parent="." instance=ExtResource("1_2yr80")]
+visible = false
 position = Vector2(81, 218)
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -36,4 +37,5 @@ SquadThreeScene = ExtResource("4_n4qrp")
 game_stats = ExtResource("4_punto")
 
 [node name="BossOne" parent="." instance=ExtResource("9_gcal7")]
+visible = false
 position = Vector2(-1, 0)
