@@ -21,7 +21,7 @@ velocity = Vector2(350, 2.08165e-12)
 [node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("2_lgsmu")
 sprite = NodePath("../Sprite2D")
-scale_amount = Vector2(3, 3)
+scale_amount = Vector2(2.08165e-12, 2.08165e-12)
 scale_duration = 1.5
 
 [node name="FlashComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]

@@ -17,7 +17,7 @@ texture = ExtResource("2_xtfao")
 scene = ExtResource("4_pwicb")
 
 [node name="LeftMuzzle" type="Marker2D" parent="." index="8"]
-position = Vector2(64, 50)
+position = Vector2(67, 50)
 
 [node name="RightMuzzle" type="Marker2D" parent="." index="9"]
-position = Vector2(100, 50)
+position = Vector2(97, 50)
