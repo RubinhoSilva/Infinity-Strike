@@ -46,3 +46,4 @@ script = ExtResource("7_bh3ws")
 game_stats = ExtResource("8_q1qa5")
 
 [node name="FireRateTimer" type="Timer" parent="."]
+autostart = true
