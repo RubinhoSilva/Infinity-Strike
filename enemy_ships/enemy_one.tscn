@@ -64,3 +64,7 @@ scale = Vector2(0.8, 0.7)
 
 [node name="FireRateTimer" parent="." index="16"]
 wait_time = 2.5
+
+[node name="VisibleOnScreenNotifier2D2" parent="." index="17"]
+rotation = 0.539307
+scale = Vector2(120, 120)

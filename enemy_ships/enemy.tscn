@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3fdd3hdc7p1q"]
+[gd_scene load_steps=16 format=3 uid="uid://d3fdd3hdc7p1q"]
 
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_eskvc"]
 [ext_resource type="Script" path="res://enemy_ships/enemy.gd" id="1_lsgy0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="12_4nflg"]
 [ext_resource type="Script" path="res://components/score_component.gd" id="13_sqqif"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="14_tjbta"]
+[ext_resource type="Script" path="res://components/border_bounce_component.gd" id="15_8lbf7"]
 [ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="16_7yrv5"]
 
 [node name="Enemy" type="Node2D"]
@@ -76,3 +77,10 @@ script = ExtResource("16_7yrv5")
 [node name="FireRateTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="BorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+script = ExtResource("15_8lbf7")
+actor = NodePath("..")
+move_component = NodePath("../MoveComponent")
