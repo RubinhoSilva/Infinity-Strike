@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4qxjdbtgdqsx"]
+
+[ext_resource type="Script" path="res://components/move_component.gd" id="1_y0f4y"]
+[ext_resource type="Script" path="res://components/scale_component.gd" id="2_lgsmu"]
+[ext_resource type="Script" path="res://components/flash_component.gd" id="3_rospi"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="4_fiaho"]
+
+[node name="Laser" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="MoveComponent" type="Node" parent="."]
+script = ExtResource("1_y0f4y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ScaleComponent" type="Node" parent="."]
+script = ExtResource("2_lgsmu")
+
+[node name="FlashComponent" type="Node" parent="."]
+script = ExtResource("3_rospi")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("4_fiaho")
