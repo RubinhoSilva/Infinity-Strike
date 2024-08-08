@@ -44,3 +44,5 @@ destroy_effect_spawner_component = NodePath("../SpawnerComponent")
 [node name="ScoreComponent" type="Node" parent="."]
 script = ExtResource("7_bh3ws")
 game_stats = ExtResource("8_q1qa5")
+
+[node name="FireRateTimer" type="Timer" parent="."]
