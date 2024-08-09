@@ -2,12 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cnyo56w6obq7q" path="res://enemy_ships/squads/squad.tscn" id="1_3qd67"]
 [ext_resource type="PackedScene" uid="uid://cc436mt0iwl8c" path="res://enemy_ships/enemy_one.tscn" id="2_nvjqi"]
-[ext_resource type="PackedScene" uid="uid://dqrdumc4i5var" path="res://enemy_ships/squads/squad_two.tscn" id="2_yy26p"]
+[ext_resource type="Script" path="res://enemy_ships/squads/squad_three.gd" id="2_yippg"]
 
 [node name="SquadThree" instance=ExtResource("1_3qd67")]
 position = Vector2(0, 23)
+script = ExtResource("2_yippg")
 
-[node name="SquadTwo" parent="." index="0" instance=ExtResource("2_yy26p")]
+[node name="EnemyOne" parent="." index="0" instance=ExtResource("2_nvjqi")]
+position = Vector2(33, -15)
 
-[node name="EnemyOne" parent="." index="1" instance=ExtResource("2_nvjqi")]
-position = Vector2(23, -15)
+[node name="EnemyOne2" parent="." index="1" instance=ExtResource("2_nvjqi")]
+position = Vector2(84, -15)
+
+[node name="EnemyOne3" parent="." index="2" instance=ExtResource("2_nvjqi")]
+position = Vector2(-21, -15)
