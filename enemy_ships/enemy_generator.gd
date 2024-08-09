@@ -19,9 +19,6 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#pass
-	
-	
-	
 	squad_one_spawn_timer.timeout.connect(handle_spawn.bind(SquadOneScene, squad_one_spawn_timer, 1))
 	squad_two_spawn_timer.timeout.connect(handle_spawn.bind(SquadTwoScene, squad_two_spawn_timer, 3))
 	squad_three_spawn_timer.timeout.connect(handle_spawn.bind(SquadThreeScene, squad_three_spawn_timer, 5))
