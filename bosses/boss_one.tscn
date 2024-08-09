@@ -21,3 +21,7 @@ position = Vector2(67, 50)
 
 [node name="RightMuzzle" type="Marker2D" parent="." index="9"]
 position = Vector2(97, 50)
+
+[node name="Marker2D" type="Marker2D" parent="." index="11"]
+position = Vector2(64, 50)
+rotation = 0.657989

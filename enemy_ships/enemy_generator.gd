@@ -4,6 +4,8 @@ extends Node2D
 @export var SquadTwoScene: PackedScene
 @export var SquadThreeScene: PackedScene
 
+@export var BossOneScene: PackedScene
+
 @export var game_stats: GameStats
 
 @onready var spawner_component: = $SpawnerComponent as SpawnerComponent
@@ -22,7 +24,7 @@ func _ready():
 	squad_one_spawn_timer.timeout.connect(handle_spawn.bind(SquadOneScene, squad_one_spawn_timer, 1))
 	squad_two_spawn_timer.timeout.connect(handle_spawn.bind(SquadTwoScene, squad_two_spawn_timer, 3))
 	squad_three_spawn_timer.timeout.connect(handle_spawn.bind(SquadThreeScene, squad_three_spawn_timer, 5))
-
+	
 	game_stats.score_changed.connect(func(new_score: int):
 		if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 		   	squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
@@ -57,7 +59,11 @@ func _ready():
 				print('BOSS 1')
 				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED			
+				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				spawn_boss(BossOneScene, Vector2(-3, 7))
+				
+				
+							
 	)
 
 
@@ -66,3 +72,7 @@ func handle_spawn(enemy_scene: PackedScene, timer: Timer, time_offset: float = 1
 	spawner_component.spawn(Vector2(randf_range(margin, screen_width-margin), -16))
 	var spawn_rate = time_offset / (0.5 + (game_stats.score * 0.01))
 	timer.start(spawn_rate + randf_range(0.25, 0.5))
+	
+func spawn_boss(boss_scene: PackedScene, position: Vector2) -> void:
+	spawner_component.scene = boss_scene
+	spawner_component.spawn(position)
