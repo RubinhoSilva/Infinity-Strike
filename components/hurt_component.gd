@@ -2,6 +2,8 @@
 class_name HurtComponent
 extends Node
 
+
+@onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 # Grab the stats so we can alter the health
 @export var stats_component: StatsComponent
 

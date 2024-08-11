@@ -4,9 +4,12 @@ extends Node2D
 
 @onready var ship: Node2D = $Ship
 @onready var score_label: Label = $ScoreLabel
+@onready var bg_fase_1 = $bg_fase1
+
 
 func _ready() -> void:
 	randomize()
+	bg_fase_1.play()
 	update_score_label(game_stats.score)
 	game_stats.score_changed.connect(update_score_label)
 	

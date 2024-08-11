@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3fdd3hdc7p1q"]
+[gd_scene load_steps=18 format=3 uid="uid://d3fdd3hdc7p1q"]
 
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_eskvc"]
 [ext_resource type="Script" path="res://enemy_ships/enemy.gd" id="1_lsgy0"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="14_tjbta"]
 [ext_resource type="Script" path="res://components/border_bounce_component.gd" id="15_8lbf7"]
 [ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="16_7yrv5"]
+[ext_resource type="AudioStream" uid="uid://6xm2bsol3b0l" path="res://sounds/damage_sfx.wav" id="16_eg7ui"]
+[ext_resource type="AudioStream" uid="uid://ncvgt2hipok0" path="res://sounds/explosion_sfx.wav" id="17_0c1c6"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_lsgy0")
@@ -84,3 +86,9 @@ autostart = true
 script = ExtResource("15_8lbf7")
 actor = NodePath("..")
 move_component = NodePath("../MoveComponent")
+
+[node name="damage_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_eg7ui")
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_0c1c6")
