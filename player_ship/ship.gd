@@ -11,7 +11,6 @@ extends Node2D
 @onready var hurtbox_component: = $HurtboxComponent as HurtboxComponent
 @onready var flash_component: = $FlashComponent as FlashComponent
 @onready var shake_component: = $ShakeComponent as ShakeComponent
-@onready var lasershot_sfx = $lasershot_sfx as AudioStreamPlayer
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 
 
@@ -34,5 +33,4 @@ func _input(event):
 func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
-	lasershot_sfx.play()
 	scale_component.tween_scale()
