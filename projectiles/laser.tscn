@@ -48,3 +48,4 @@ shape = SubResource("RectangleShape2D_ij2m5")
 
 [node name="lasershot_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_tdgge")
+volume_db = -20.613

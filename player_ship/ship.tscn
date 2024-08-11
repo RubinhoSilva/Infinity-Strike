@@ -210,3 +210,4 @@ node = NodePath("../Anchor")
 
 [node name="damage_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_yspmy")
+volume_db = -20.613
