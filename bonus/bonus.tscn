@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdj3mao5fhbgo"]
+[gd_scene load_steps=9 format=3 uid="uid://bdj3mao5fhbgo"]
 
 [ext_resource type="Script" path="res://components/move_component.gd" id="1_05cle"]
 [ext_resource type="Script" path="res://bonus/bonus.gd" id="1_nwnap"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_vcwt3"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="4_766vk"]
 [ext_resource type="Script" path="res://components/flash_component.gd" id="5_68usy"]
+[ext_resource type="Script" path="res://components/border_bounce_component.gd" id="7_6lipf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpfsq"]
 size = Vector2(4, 8)
@@ -43,3 +44,8 @@ script = ExtResource("2_vcwt3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_vpfsq")
+
+[node name="BorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+script = ExtResource("7_6lipf")
+actor = NodePath("..")
+move_component = NodePath("../MoveComponent")

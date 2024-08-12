@@ -6,7 +6,7 @@ extends Bonus
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	print('oqooqo')
+
 	#hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
 		#print('HI')
 	#)

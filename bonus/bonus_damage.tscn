@@ -17,6 +17,7 @@ texture = ExtResource("3_pkcts")
 
 [node name="MoveComponent" parent="." index="1" node_paths=PackedStringArray("actor")]
 actor = NodePath("..")
+velocity = Vector2(-10, 20)
 
 [node name="ScaleComponent" parent="." index="3" node_paths=PackedStringArray("sprite")]
 sprite = NodePath("..")
