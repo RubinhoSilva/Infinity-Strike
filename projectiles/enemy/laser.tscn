@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh5qyfsgf3j27"]
+[gd_scene load_steps=9 format=3 uid="uid://bh5qyfsgf3j27"]
 
 [ext_resource type="Script" path="res://projectiles/enemy/laser.gd" id="1_dkg4t"]
 [ext_resource type="Texture2D" uid="uid://bps3n0kedeihb" path="res://assets/laser_small.png" id="2_bwohq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://components/scale_component.gd" id="4_43l68"]
 [ext_resource type="Script" path="res://components/flash_component.gd" id="5_gpf5i"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="6_1rh8f"]
+[ext_resource type="AudioStream" uid="uid://cc3qdso72g0y6" path="res://sounds/laser_sfx.wav" id="7_8ycb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij2m5"]
 size = Vector2(4, 8)
@@ -44,3 +45,7 @@ damage = 2.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ij2m5")
+
+[node name="lasershot_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8ycb7")
+volume_db = -20.613

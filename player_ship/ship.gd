@@ -11,12 +11,14 @@ extends Node2D
 @onready var hurtbox_component: = $HurtboxComponent as HurtboxComponent
 @onready var flash_component: = $FlashComponent as FlashComponent
 @onready var shake_component: = $ShakeComponent as ShakeComponent
+@onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 
 
 func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
 		flash_component.flash()
 		shake_component.tween_shake()
+		damage_sfx.play() 
 		#variable_pitch_audio_stream_player.play_with_variance()
 	)
 	

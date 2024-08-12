@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b67qjuigi4dvn"]
+[gd_scene load_steps=32 format=3 uid="uid://b67qjuigi4dvn"]
 
 [ext_resource type="Script" path="res://player_ship/ship.gd" id="1_mqtmi"]
 [ext_resource type="Texture2D" uid="uid://csv6axkat2gqy" path="res://assets/ship.png" id="1_r7y1d"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="16_u0wy7"]
 [ext_resource type="Script" path="res://components/flash_component.gd" id="17_oh2ga"]
 [ext_resource type="Script" path="res://components/shake_component.gd" id="18_o3ouu"]
+[ext_resource type="AudioStream" uid="uid://6xm2bsol3b0l" path="res://sounds/damage_sfx.wav" id="21_yspmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_an4xm"]
 atlas = ExtResource("1_r7y1d")
@@ -206,3 +207,7 @@ sprite = NodePath("../Anchor/AnimatedSprite2D")
 [node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("18_o3ouu")
 node = NodePath("../Anchor")
+
+[node name="damage_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_yspmy")
+volume_db = -20.613

@@ -12,10 +12,16 @@ extends Node2D
 @onready var destroyed_component: = $DestroyedComponent as DestroyedComponent
 @onready var score_component: = $ScoreComponent as ScoreComponent
 @onready var variable_pitch_audio_stream_player: = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
+@onready var damage_sfx = $damage_sfx as AudioStreamPlayer
+@onready var explosion_sfx = $explosion_sfx as AudioStreamPlayer
+
+
 
 func _ready() -> void:
 	stats_component.no_health.connect(func():
+		explosion_sfx.play() #Som não ta tocando
 		score_component.adjust_score()
+		
 	)
 	
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
@@ -23,6 +29,7 @@ func _ready() -> void:
 		scale_component.tween_scale()
 		flash_component.flash()
 		shake_component.tween_shake()
+		damage_sfx.play()
 		variable_pitch_audio_stream_player.play_with_variance()
 	)
 	stats_component.no_health.connect(queue_free)
