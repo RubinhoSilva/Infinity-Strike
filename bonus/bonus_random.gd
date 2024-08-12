@@ -2,6 +2,7 @@ extends Node2D
 
 @export var DamageBonusScene: PackedScene
 @export var HealthBonusScene: PackedScene
+@export var ShieldBonusScene: PackedScene
 
 @export var game_stats: GameStats
 
@@ -18,8 +19,10 @@ func _ready():
 
 	if (number_rand == 1):
 		spaw_bonus(DamageBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
-	else:
+	elif (number_rand == 2):
 		spaw_bonus(HealthBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
+	else:
+		spaw_bonus(ShieldBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
 
 
 func spaw_bonus(bonus_scene: PackedScene, position: Vector2) -> void:
