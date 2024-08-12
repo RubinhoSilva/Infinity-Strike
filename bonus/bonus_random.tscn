@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqrpfhxo1vvec"]
+[gd_scene load_steps=6 format=3 uid="uid://dqrpfhxo1vvec"]
 
 [ext_resource type="Script" path="res://bonus/bonus_random.gd" id="1_h2rx4"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="1_wdv8q"]
 [ext_resource type="PackedScene" uid="uid://1rq4y08yupft" path="res://bonus/bonus_damage.tscn" id="2_emgbi"]
+[ext_resource type="PackedScene" uid="uid://3jtcirudbcab" path="res://bonus/bonus_health.tscn" id="3_bte0o"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="3_se13u"]
 
 [node name="BonusRandom" type="Node2D"]
 script = ExtResource("1_h2rx4")
 DamageBonusScene = ExtResource("2_emgbi")
+HealthBonusScene = ExtResource("3_bte0o")
 game_stats = ExtResource("3_se13u")
 
 [node name="SpawnerComponent" type="Node2D" parent="."]
