@@ -15,10 +15,10 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var number_rand = randi() % 3 + 1
-	
+
 	if (number_rand == 1):
 		spaw_bonus(DamageBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
-	elif (number_rand == 2):
+	else:
 		spaw_bonus(HealthBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
 
 
