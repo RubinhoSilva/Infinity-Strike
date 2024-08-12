@@ -6,7 +6,7 @@ extends Node2D
 
 @export var BossOneScene: PackedScene
 
-@export var DamageBonusScene: PackedScene
+@export var BonusRandomScene: PackedScene
 
 @export var game_stats: GameStats
 
@@ -33,7 +33,7 @@ func _ready():
 		   	squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 			squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 			new_score >= randi_range(7, 10):
-				spaw_bonus(DamageBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
+				spaw_bonus(BonusRandomScene)
 				print('STARTING SQUAD 2')
 				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
@@ -81,6 +81,6 @@ func spawn_boss(boss_scene: PackedScene, position: Vector2) -> void:
 	spawner_component.scene = boss_scene
 	spawner_component.spawn(position)
 	
-func spaw_bonus(bonus_scene: PackedScene, position: Vector2) -> void:
+func spaw_bonus(bonus_scene: PackedScene) -> void:
 	spawner_component.scene = bonus_scene
-	spawner_component.spawn(position)
+	spawner_component.spawn(Vector2(0, 0))

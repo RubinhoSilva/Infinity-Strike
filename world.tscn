@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bla6t7bkr7o7g" path="res://fonts/kenney_mini_square.ttf" id="7_my3fh"]
 [ext_resource type="PackedScene" uid="uid://6ykegpdavxm5" path="res://bosses/boss_one.tscn" id="9_gcal7"]
 [ext_resource type="AudioStream" uid="uid://byxjxllnvb04q" path="res://sounds/bg_fase1.wav" id="10_8nxty"]
-[ext_resource type="PackedScene" uid="uid://1rq4y08yupft" path="res://bonus/bonus_damage.tscn" id="11_plom2"]
+[ext_resource type="PackedScene" uid="uid://dqrpfhxo1vvec" path="res://bonus/bonus_random.tscn" id="10_ij4jd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
@@ -36,7 +36,7 @@ SquadOneScene = ExtResource("1_kqohh")
 SquadTwoScene = ExtResource("3_ayg6h")
 SquadThreeScene = ExtResource("4_n4qrp")
 BossOneScene = ExtResource("9_gcal7")
-DamageBonusScene = ExtResource("11_plom2")
+BonusRandomScene = ExtResource("10_ij4jd")
 game_stats = ExtResource("4_punto")
 
 [node name="bg_fase1" type="AudioStreamPlayer" parent="."]
