@@ -15,3 +15,4 @@ func _ready() -> void:
 func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
+	scale_component.tween_scale()

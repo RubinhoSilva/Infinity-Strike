@@ -1,6 +1,7 @@
 class_name Boss
 extends Node2D
 
+@onready var scale_component: = $ScaleComponent as ScaleComponent
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

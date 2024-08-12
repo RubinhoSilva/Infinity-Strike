@@ -41,3 +41,6 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
+
+[node name="BossOne" parent="." instance=ExtResource("9_gcal7")]
+position = Vector2(0, 33)
