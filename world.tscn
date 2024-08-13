@@ -20,9 +20,6 @@ font_size = 6
 script = ExtResource("1_n0vdm")
 game_stats = ExtResource("4_punto")
 
-[node name="Ship" parent="." instance=ExtResource("1_2yr80")]
-position = Vector2(81, 218)
-
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 49.0
 offset_bottom = 13.0
@@ -30,19 +27,6 @@ text = "SCORE"
 label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="EnemyGenerator" parent="." instance=ExtResource("3_qcq1c")]
-SquadOneScene = ExtResource("1_kqohh")
-SquadTwoScene = ExtResource("3_ayg6h")
-SquadThreeScene = ExtResource("4_n4qrp")
-BossOneScene = ExtResource("9_gcal7")
-BonusRandomScene = ExtResource("10_ij4jd")
-game_stats = ExtResource("4_punto")
-
-[node name="bg_fase1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_8nxty")
-volume_db = -10.668
-autoplay = true
 
 [node name="HealthLabel" type="Label" parent="."]
 offset_left = 46.0
@@ -64,5 +48,18 @@ label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BossOne" parent="." instance=ExtResource("9_gcal7")]
-position = Vector2(-3, 53)
+[node name="Ship" parent="." instance=ExtResource("1_2yr80")]
+position = Vector2(81, 218)
+
+[node name="EnemyGenerator" parent="." instance=ExtResource("3_qcq1c")]
+SquadOneScene = ExtResource("1_kqohh")
+SquadTwoScene = ExtResource("3_ayg6h")
+SquadThreeScene = ExtResource("4_n4qrp")
+BossOneScene = ExtResource("9_gcal7")
+BonusRandomScene = ExtResource("10_ij4jd")
+game_stats = ExtResource("4_punto")
+
+[node name="bg_fase1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8nxty")
+volume_db = -10.668
+autoplay = true
