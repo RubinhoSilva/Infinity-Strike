@@ -19,7 +19,7 @@ texture = ExtResource("2_gwa82")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("1_05cle")
-actor = NodePath("../Sprite2D")
+actor = NodePath("..")
 velocity = Vector2(2.08165e-12, 200)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

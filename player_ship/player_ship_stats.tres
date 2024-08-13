@@ -1,6 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://brw8cryu3vxhc"]
+[gd_resource type="Resource" script_class="PlayerShipStats" load_steps=2 format=3 uid="uid://brw8cryu3vxhc"]
+
+[ext_resource type="Script" path="res://player_ship/player_ship_stats.gd" id="1_sfnbt"]
 
 [resource]
+script = ExtResource("1_sfnbt")
+damage = 0.0
+my_string = "Hello"
 metadata/damage = 2.5
 metadata/Health = 250.0
 metadata/ShieldTime = 0

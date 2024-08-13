@@ -10,7 +10,7 @@ func _ready() -> void:
 	var velocity = randi_range(0, 50)
 	
 	move_component.velocity.x = velocity * sign_
-	print('jadsjdj')
-	hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
-		print('HI')
-	)
+	#print('jadsjdj')
+	#hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
+		#print('HI')
+	#)

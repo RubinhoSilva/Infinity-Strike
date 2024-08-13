@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=14 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/squad_one.tscn" id="1_kqohh"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://6ykegpdavxm5" path="res://bosses/boss_one.tscn" id="9_gcal7"]
 [ext_resource type="AudioStream" uid="uid://byxjxllnvb04q" path="res://sounds/bg_fase1.wav" id="10_8nxty"]
 [ext_resource type="PackedScene" uid="uid://dqrpfhxo1vvec" path="res://bonus/bonus_random.tscn" id="10_ij4jd"]
+[ext_resource type="PackedScene" uid="uid://3jtcirudbcab" path="res://bonus/bonus_health.tscn" id="12_octd2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
@@ -43,3 +44,6 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
+
+[node name="BonusHealth" parent="." instance=ExtResource("12_octd2")]
+position = Vector2(80, 135)
