@@ -8,9 +8,6 @@ extends Node2D
 func _ready() -> void:
 	var sign_ = (randi() % 2) * 2 - 1
 	var velocity = randi_range(0, 50)
-	
 	move_component.velocity.x = velocity * sign_
-	#print('jadsjdj')
-	#hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
-		#print('HI')
-	#)
+	
+	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
