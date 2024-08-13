@@ -7,6 +7,7 @@ extends Node
 	set(value):
 		health = value
 		
+		print('health_changed')
 		# Signal out that the health has changed
 		health_changed.emit()
 		
@@ -19,5 +20,18 @@ signal no_health() # Emit when there is no health left
 
 
 @export var damage: float = 2.5
+	#set(value):
+		#health = value
+		#
+		## Signal out that the health has changed
+		#health_changed.emit()
+		#
+		## Signal out when health is at 0
+		#if health <= 0: no_health.emit()
+#
+## Create our signals for health
+#signal health_changed() # Emit when the health value has changed
+#signal no_health() # Emit when there is no health left
+
 @export var speed: int = 100
 @export var shield: int = 0 #in seconds
