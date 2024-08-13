@@ -13,7 +13,11 @@ func _ready() -> void:
 	# Connect the hurt signal on the hurtbox component to an anonymous function
 	# that removes health equal to the damage from the hitbox
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		print(stats_component.health)
+		if hitbox_component.get_parent() is BonusHealth:
+			stats_component.health += 20
+		else:
+			stats_component.health -= hitbox_component.damage
+			
 		print(hitbox_component.damage)
-		stats_component.health -= hitbox_component.damage
+		print(stats_component.health)
 	)
