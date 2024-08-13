@@ -14,7 +14,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
-font_size = 10
+font_size = 6
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n0vdm")
@@ -24,7 +24,7 @@ game_stats = ExtResource("4_punto")
 position = Vector2(81, 218)
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_right = 159.0
+offset_right = 49.0
 offset_bottom = 13.0
 text = "SCORE"
 label_settings = SubResource("LabelSettings_fnahk")
@@ -43,3 +43,23 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 46.0
+offset_top = -1.0
+offset_right = 106.0
+offset_bottom = 12.0
+text = "HEALTH"
+label_settings = SubResource("LabelSettings_fnahk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = 103.0
+offset_top = -1.0
+offset_right = 163.0
+offset_bottom = 12.0
+text = "DAMAGE"
+label_settings = SubResource("LabelSettings_fnahk")
+horizontal_alignment = 1
+vertical_alignment = 1
