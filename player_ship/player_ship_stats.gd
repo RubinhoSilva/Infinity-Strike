@@ -1,7 +1,11 @@
-extends Resource
-class_name PlayerShipStats
+extends Node
 
-@export var damage: float = 2.5
-@export var health: int = 250
-@export var shield_time = 0
-@export var speed = 100
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

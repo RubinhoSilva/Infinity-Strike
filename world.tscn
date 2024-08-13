@@ -46,4 +46,4 @@ volume_db = -10.668
 autoplay = true
 
 [node name="BonusHealth" parent="." instance=ExtResource("12_octd2")]
-position = Vector2(80, 135)
+position = Vector2(108, -97)
