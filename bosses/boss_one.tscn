@@ -43,3 +43,5 @@ scale_amount = Vector2(0.1, 0.1)
 
 [node name="ShakeComponent" parent="." index="13" node_paths=PackedStringArray("node")]
 node = NodePath("..")
+shake_amount = 0.1
+shake_duration = 0.1
