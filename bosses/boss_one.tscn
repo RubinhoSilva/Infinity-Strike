@@ -2,16 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_8j7k5"]
 [ext_resource type="Script" path="res://bosses/boss_one.gd" id="2_exsp3"]
-[ext_resource type="Texture2D" uid="uid://dm13ii247fxnj" path="res://assets/bosses/one.png" id="2_xtfao"]
 [ext_resource type="PackedScene" uid="uid://be2etta6wabot" path="res://projectiles/boss/laser_one.tscn" id="4_pwicb"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4imla"]
+load_path = "res://.godot/imported/boss_one.png-f0b93e9b386cd508f382154cdcad3bef.ctex"
+
 [node name="BossOne" instance=ExtResource("1_8j7k5")]
+z_index = 100
 script = ExtResource("2_exsp3")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(81, 34)
-scale = Vector2(0.65546, 0.670048)
-texture = ExtResource("2_xtfao")
+position = Vector2(80, 36)
+scale = Vector2(0.697522, 0.741274)
+texture = SubResource("CompressedTexture2D_4imla")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 500
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]
+polygon = PackedVector2Array(64, 58, 69, 58, 70, 54, 71, 54, 72, 58, 74, 58, 74, 63, 76, 63, 76, 67, 78, 67, 78, 69, 82, 70, 82, 67, 84, 67, 84, 63, 86, 63, 86, 58, 89, 58, 89, 54, 91, 54, 91, 58, 97, 58, 97, 52, 98, 52, 99, 54, 100, 54, 101, 56, 105, 56, 105, 58, 111, 58, 111, 56, 117, 56, 118, 54, 126, 54, 126, 52, 139, 52, 139, 50, 143, 50, 143, 47, 145, 47, 145, 45, 147, 45, 147, 43, 145, 43, 145, 41, 143, 41, 143, 39, 141, 38, 141, 37, 137, 36, 136, 38, 123, 38, 122, 36, 108, 36, 108, 34, 99, 34, 99, 32, 113, 20, 114, 11, 112, 11, 111, 9, 100, 15, 89, 15, 89, 13, 86, 14, 86, 15, 81, 21, 74, 13, 72, 13, 71, 15, 59, 15, 59, 13, 56, 13, 50, 8, 46, 11, 46, 20, 61, 33, 53, 33, 52, 35, 38, 35, 37, 37, 24, 38, 24, 36, 19, 36, 18, 37, 16, 40, 14, 42, 13, 42, 13, 45, 15, 45, 15, 47, 17, 47, 17, 49, 21, 50, 21, 51, 34, 52, 33, 54, 42, 54, 42, 56, 48, 56, 48, 58, 55, 58, 55, 56, 59, 56, 59, 54, 61, 54, 61, 52, 63, 52)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+polygon = PackedVector2Array(64, 58, 69, 58, 70, 54, 71, 54, 72, 58, 74, 58, 74, 63, 76, 63, 76, 67, 78, 67, 78, 69, 82, 70, 82, 67, 84, 67, 84, 63, 86, 63, 86, 58, 89, 58, 89, 54, 91, 54, 91, 58, 97, 58, 97, 52, 98, 52, 99, 54, 100, 54, 101, 56, 105, 56, 105, 58, 111, 58, 111, 56, 117, 56, 118, 54, 126, 54, 126, 52, 139, 52, 139, 50, 143, 50, 143, 47, 145, 47, 145, 45, 147, 45, 147, 43, 145, 43, 145, 41, 143, 41, 143, 39, 141, 38, 141, 37, 137, 36, 136, 38, 123, 38, 122, 36, 108, 36, 108, 34, 99, 34, 99, 32, 113, 20, 114, 11, 112, 11, 111, 9, 100, 15, 89, 15, 89, 13, 86, 14, 86, 15, 81, 21, 74, 13, 72, 13, 71, 15, 59, 15, 59, 13, 56, 13, 50, 8, 46, 11, 46, 20, 61, 33, 53, 33, 52, 35, 38, 35, 37, 37, 24, 38, 24, 36, 19, 36, 18, 37, 16, 40, 14, 42, 13, 42, 13, 45, 15, 45, 15, 47, 17, 47, 17, 49, 21, 50, 21, 51, 34, 52, 33, 54, 42, 54, 42, 56, 48, 56, 48, 58, 55, 58, 55, 56, 59, 56, 59, 54, 61, 54, 61, 52, 63, 52)
 
 [node name="SpawnerComponent" parent="." index="5"]
 scene = ExtResource("4_pwicb")
