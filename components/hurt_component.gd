@@ -15,9 +15,12 @@ func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
 		if hitbox_component.get_parent() is BonusHealth:
 			stats_component.health += 20
+		elif hitbox_component.get_parent() is BonusShield:
+			stats_component.shield += 10
 		else:
-			stats_component.health -= hitbox_component.damage
-			
-		print(hitbox_component.damage)
-		print(stats_component.health)
+			if stats_component.shield == 0:
+				#TOMAR DANO
+				stats_component.health -= hitbox_component.damage
+			else:
+				stats_component.shield -= 1
 	)
