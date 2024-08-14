@@ -33,8 +33,8 @@ func _ready():
 		   	squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 			squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 			new_score >= randi_range(7, 10):
-				spaw_bonus(BonusRandomScene)
 				print('STARTING SQUAD 2')
+				spaw_bonus(BonusRandomScene)
 				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 
@@ -51,6 +51,7 @@ func _ready():
 			squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 			new_score >= randi_range(20, 25):
 				print('STARTING SQUAD 3')
+				spaw_bonus(BonusRandomScene)
 				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
@@ -61,6 +62,7 @@ func _ready():
 			new_score >= randi_range(40, 50):
 				print('STOP SQUAD 3')
 				print('BOSS 1')
+				spaw_bonus(BonusRandomScene)
 				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
