@@ -34,8 +34,12 @@ position = Vector2(67, 51)
 [node name="RightMuzzle" type="Marker2D" parent="." index="9"]
 position = Vector2(95, 51)
 
+[node name="FireRateTimer" parent="." index="10"]
+wait_time = 0.3
+
 [node name="FlashComponent" parent="." index="11" node_paths=PackedStringArray("sprite")]
 sprite = NodePath("../Sprite2D")
+flash_duration = 0.01
 
 [node name="ScaleComponent" parent="." index="12" node_paths=PackedStringArray("sprite")]
 sprite = NodePath("../Sprite2D")

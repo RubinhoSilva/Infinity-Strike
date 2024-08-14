@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://be2etta6wabot"]
 
 [ext_resource type="PackedScene" uid="uid://c4qxjdbtgdqsx" path="res://projectiles/boss/laser.tscn" id="1_p3mon"]
-[ext_resource type="Texture2D" uid="uid://coxu7smq06ty8" path="res://assets/laser_big.png" id="2_7ofd8"]
+[ext_resource type="Texture2D" uid="uid://boegsju6j3k8" path="res://assets/bosses/laser_one.png" id="2_s8eiq"]
 
 [node name="LaserOne" instance=ExtResource("1_p3mon")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(3.75, 2.90625)
-texture = ExtResource("2_7ofd8")
+texture = ExtResource("2_s8eiq")
 
 [node name="MoveComponent" parent="." index="1"]
 velocity = Vector2(2.08165e-12, 350)
