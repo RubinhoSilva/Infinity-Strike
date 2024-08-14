@@ -29,6 +29,7 @@ func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
 	
 func update_health_label(new_health: int) -> void:
+	print('teste')
 	health_label.text = "Health: " + str(new_health)
 
 func update_damage_label(new_damage: int) -> void:

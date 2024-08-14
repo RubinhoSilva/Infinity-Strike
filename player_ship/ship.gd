@@ -34,3 +34,8 @@ func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
 	scale_component.tween_scale()
+
+
+func _on_stats_component_health_changed():
+	get_parent().get_node('HealthLabel').text = "Health: " + str(stats_component.health)
+
