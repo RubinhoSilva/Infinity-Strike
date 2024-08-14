@@ -38,4 +38,11 @@ func fire_lasers() -> void:
 
 func _on_stats_component_health_changed():
 	get_parent().get_node('HealthLabel').text = "Health: " + str(stats_component.health)
+	
+func _on_stats_component_shield_changed():
+	if stats_component.shield > 0:
+		get_parent().get_node('HealthLabel').text = "Health: " + str(stats_component.health) + "(+" + str(stats_component.shield) + ")"
+	
+func _on_stats_component_damage_changed():
+	get_parent().get_node('DamageLabel').text = "Damage: " + str(stats_component.damage)
 

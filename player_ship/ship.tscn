@@ -212,4 +212,7 @@ node = NodePath("../Anchor")
 stream = ExtResource("21_yspmy")
 volume_db = -20.613
 
+[connection signal="damage_changed" from="StatsComponent" to="." method="_on_stats_component_damage_changed"]
 [connection signal="health_changed" from="StatsComponent" to="." method="_on_stats_component_health_changed"]
+[connection signal="no_health" from="StatsComponent" to="." method="_on_stats_component_no_health"]
+[connection signal="shield_changed" from="StatsComponent" to="." method="_on_stats_component_shield_changed"]

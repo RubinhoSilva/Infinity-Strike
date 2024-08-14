@@ -17,10 +17,12 @@ func _ready() -> void:
 			stats_component.health += 20
 		elif hitbox_component.get_parent() is BonusShield:
 			stats_component.shield += 10
+		elif hitbox_component.get_parent() is BonusDamage:
+			stats_component.damage *= 2
 		else:
 			if stats_component.shield == 0:
 				#TOMAR DANO
-				stats_component.health -= hitbox_component.damage
+				stats_component.health -= stats_component.damage
 			else:
 				stats_component.shield -= 1
 	)
