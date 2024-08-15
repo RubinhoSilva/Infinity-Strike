@@ -138,8 +138,8 @@ autoplay = "center"
 
 [node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor"]
 unique_name_in_owner = true
-position = Vector2(-0.5, 16)
-scale = Vector2(1.0625, 1)
+position = Vector2(-1, 15)
+scale = Vector2(0.953125, 1)
 sprite_frames = SubResource("SpriteFrames_u31ju")
 animation = &"center"
 autoplay = "center"
