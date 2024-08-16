@@ -20,6 +20,7 @@ script = ExtResource("1_w2ps1")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("1_em654")
+damage = 10.0
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 collision_layer = 2
