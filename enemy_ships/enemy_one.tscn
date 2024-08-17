@@ -39,7 +39,7 @@ sprite_frames = SubResource("SpriteFrames_ijrda")
 animation = &"move"
 
 [node name="StatsComponent" parent="." index="1"]
-health = 2
+health = 10
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(2.08165e-12, 10)
