@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
 	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
-		scale_component.tween_scale()
+		#scale_component.tween_scale()
 		flash_component.flash()
 		shake_component.tween_shake()
 		damage_sfx.play()

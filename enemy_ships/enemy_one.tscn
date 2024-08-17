@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc436mt0iwl8c"]
+[gd_scene load_steps=9 format=3 uid="uid://cc436mt0iwl8c"]
 
 [ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_ffhhi"]
 [ext_resource type="Script" path="res://enemy_ships/enemy_one.gd" id="2_42ru2"]
 [ext_resource type="Texture2D" uid="uid://csv6axkat2gqy" path="res://assets/ship.png" id="2_ennik"]
+[ext_resource type="Texture2D" uid="uid://cnqfau2l38lii" path="res://assets/enemies/one/ship.png" id="3_ef51i"]
 [ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="4_p7f2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26o5"]
+atlas = ExtResource("3_ef51i")
+region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s52kl"]
 atlas = ExtResource("2_ennik")
@@ -12,6 +17,9 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ijrda"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26o5")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s52kl")
 }],
@@ -24,8 +32,9 @@ animations = [{
 script = ExtResource("2_42ru2")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-5.68434e-14, 0)
 rotation = -3.13216
-scale = Vector2(1, 0.987285)
+scale = Vector2(0.480569, 0.534515)
 sprite_frames = SubResource("SpriteFrames_ijrda")
 animation = &"move"
 
@@ -54,12 +63,12 @@ scene = ExtResource("4_p7f2j")
 adjust_amount = 1
 
 [node name="LeftMuzzle" type="Marker2D" parent="." index="14"]
-position = Vector2(-4, 4)
+position = Vector2(-8, 6)
 scale = Vector2(0.8, 0.7)
 gizmo_extents = 1000.0
 
 [node name="RightMuzzle" type="Marker2D" parent="." index="15"]
-position = Vector2(4, 4)
+position = Vector2(8.35, 6)
 scale = Vector2(0.8, 0.7)
 
 [node name="FireRateTimer" parent="." index="16"]

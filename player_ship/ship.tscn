@@ -130,10 +130,10 @@ health = 250
 [node name="Anchor" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor"]
-position = Vector2(-1, -7.62939e-06)
+position = Vector2(-1, 0)
 scale = Vector2(0.013916, 0.0139974)
 sprite_frames = SubResource("SpriteFrames_h24ni")
-animation = &"center"
+animation = &"bank_right"
 autoplay = "center"
 
 [node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor"]
