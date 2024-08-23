@@ -20,4 +20,8 @@ func spawn(global_spawn_position: Vector2 = global_position, parent: Node = get_
 	instance.global_position = global_spawn_position
 	# Return the instance in case we want to perform any other operations
 	# on it after instancing it.
+	
+	# Store the scene (or node) that triggered the spawn in the instance
+	instance.set("triggering_scene", get_parent())
+		
 	return instance

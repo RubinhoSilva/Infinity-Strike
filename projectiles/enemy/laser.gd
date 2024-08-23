@@ -1,4 +1,4 @@
-#laser for enemy
+class_name EnemyLaser
 extends Node2D
 
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
@@ -6,6 +6,8 @@ extends Node2D
 @onready var flash_component: FlashComponent = $FlashComponent as FlashComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent as HitboxComponent
 @onready var lasershot_sfx = $lasershot_sfx as AudioStreamPlayer
+
+var triggering_scene: Node = null
 
 func _ready() -> void:
 	scale_component.tween_scale()

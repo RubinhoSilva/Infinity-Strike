@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg4ufivy7efcx"]
+
+[ext_resource type="PackedScene" uid="uid://cnyo56w6obq7q" path="res://enemy_ships/squads/squad.tscn" id="1_umqom"]
+[ext_resource type="PackedScene" uid="uid://cc436mt0iwl8c" path="res://enemy_ships/enemy_one.tscn" id="2_m8fc2"]
+
+[node name="SquadFour" instance=ExtResource("1_umqom")]
+
+[node name="EnemyOne" parent="." index="0" instance=ExtResource("2_m8fc2")]

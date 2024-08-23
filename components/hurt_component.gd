@@ -13,6 +13,12 @@ func _ready() -> void:
 	# Connect the hurt signal on the hurtbox component to an anonymous function
 	# that removes health equal to the damage from the hitbox
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
+		#print(hitbox_component)
+		if (hitbox_component.get_parent() is EnemyLaser):
+			print(hitbox_component.get_parent().triggering_scene)
+			print(hitbox_component.get_parent().triggering_scene.get_node('StatsComponent').damage)
+			
+		
 		if hitbox_component.get_parent() is BonusHealth:
 			stats_component.health += 20
 		elif hitbox_component.get_parent() is BonusShield:

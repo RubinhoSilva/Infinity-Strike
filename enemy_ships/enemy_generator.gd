@@ -71,6 +71,15 @@ func _ready():
 				
 							
 	)
+	
+	game_stats.level_changed.connect(func(new_level: int):
+		if new_level == 2:
+			print('BOSS 1 F')
+			spaw_bonus(BonusRandomScene)
+			spaw_bonus(BonusRandomScene)
+			spaw_bonus(BonusRandomScene)
+			squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+	)
 
 
 func handle_spawn(enemy_scene: PackedScene, timer: Timer, time_offset: float = 1.0) -> void:
