@@ -14,10 +14,16 @@ extends Node2D
 @onready var variable_pitch_audio_stream_player: = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 @onready var explosion_sfx = $explosion_sfx as AudioStreamPlayer
+@onready var spawner_component: SpawnerComponent = $SpawnerComponent as SpawnerComponent
+@onready var fire_rate_timer: Timer = $FireRateTimer
+@onready var left_muzzle: Marker2D = $LeftMuzzle
+@onready var right_muzzle: Marker2D = $RightMuzzle
 
 
 
 func _ready() -> void:
+	fire_rate_timer.timeout.connect(fire_lasers)
+	
 	stats_component.no_health.connect(func():
 		explosion_sfx.play() #Som não ta tocando
 		score_component.adjust_score()
@@ -34,3 +40,11 @@ func _ready() -> void:
 	)
 	stats_component.no_health.connect(queue_free)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))
+	
+
+	
+	
+func fire_lasers() -> void:
+	spawner_component.spawn(left_muzzle.global_position)
+	spawner_component.spawn(right_muzzle.global_position)
+	#scale_component.tween_scale()

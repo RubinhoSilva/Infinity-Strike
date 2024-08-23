@@ -45,4 +45,3 @@ func _on_stats_component_shield_changed():
 	
 func _on_stats_component_damage_changed():
 	get_parent().get_node('DamageLabel').text = "Damage: " + str(stats_component.damage)
-

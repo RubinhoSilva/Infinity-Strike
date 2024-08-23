@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs6vlk88ooliv"]
+
+[ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_gkmgw"]
+[ext_resource type="Texture2D" uid="uid://b3cebabrj5a4b" path="res://assets/enemies/two/ship.png" id="2_tph1g"]
+[ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="3_vsx40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7phr4"]
+atlas = ExtResource("2_tph1g")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_we4qq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7phr4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyTwo" instance=ExtResource("1_gkmgw")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-1.90735e-06, 9.53674e-07)
+rotation = 3.14159
+scale = Vector2(0.46875, 0.520833)
+sprite_frames = SubResource("SpriteFrames_we4qq")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 20
+damage = 5.0
+speed = 150
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]
+build_mode = 1
+polygon = PackedVector2Array(-12, 5, -5, 0, -5, -1, -4, -1, -4, -2, -4, -6, -3, -6, -3, -10, -2, -12, -1, -11, -1, -9, 1, -9, 2, -11, 4, -10, 4, -6, 4, -2, 5, 0, 13, 5, 13, 11, 12, 11, 12, 10, 11, 10, 11, 9, 11, 9, 10, 9, 7, 7, 2, 7, 1, 8, 1, 7, -1, 7, -1, 8, -2, 7, -7, 7, -7, 7, -8, 8, -10, 9, -11, 9, -11, 10, -12, 10, -13, 10, -13, 10, -13, 5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+polygon = PackedVector2Array(-12, 5, -5, 0, -5, -1, -4, -1, -4, -2, -4, -6, -3, -6, -3, -10, -2, -12, -1, -11, -1, -9, 1, -9, 2, -11, 4, -10, 4, -6, 4, -2, 5, 0, 13, 5, 13, 11, 12, 11, 12, 10, 11, 10, 11, 9, 11, 9, 10, 9, 7, 7, 2, 7, 1, 8, 1, 7, -1, 7, -1, 8, -2, 7, -7, 7, -7, 7, -8, 8, -10, 9, -11, 9, -11, 10, -12, 10, -13, 10, -13, 10, -13, 5)
+
+[node name="SpawnerComponent" parent="." index="10"]
+scene = ExtResource("3_vsx40")
+
+[node name="ScoreComponent" parent="." index="12"]
+adjust_amount = 2
+
+[node name="FireRateTimer" parent="." index="14"]
+wait_time = 2.0
+
+[node name="LeftMuzzle" type="Marker2D" parent="." index="19"]
+position = Vector2(-12, 10)
+scale = Vector2(0.8, 0.7)
+gizmo_extents = 1000.0
+
+[node name="RightMuzzle" type="Marker2D" parent="." index="20"]
+position = Vector2(12, 10)
+scale = Vector2(0.8, 0.7)

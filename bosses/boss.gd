@@ -21,4 +21,3 @@ func _ready() -> void:
 		shake_component.tween_shake()
 	)
 	stats_component.no_health.connect(queue_free)
-
