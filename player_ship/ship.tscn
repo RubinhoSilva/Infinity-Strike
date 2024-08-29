@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_vqpx2"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="7_26x81"]
 [ext_resource type="Script" path="res://components/move_stats.gd" id="8_cm7xp"]
-[ext_resource type="PackedScene" uid="uid://3c0cr3714r4k" path="res://projectiles/laser.tscn" id="8_ypby4"]
+[ext_resource type="PackedScene" uid="uid://3c0cr3714r4k" path="res://projectiles/ship/laser.tscn" id="8_ypby4"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="9_72otb"]
 [ext_resource type="Texture2D" uid="uid://cmfx7uwiptxam" path="res://assets/ship_flame.png" id="10_svgp4"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="12_76ubl"]
