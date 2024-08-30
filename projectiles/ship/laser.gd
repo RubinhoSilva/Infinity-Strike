@@ -6,6 +6,8 @@ extends Node2D
 @onready var hitbox_component: HitboxComponent = $HitboxComponent as HitboxComponent
 @onready var lasershot_sfx = $lasershot_sfx as AudioStreamPlayer
 
+var triggering_scene: Node = null
+
 func _ready() -> void:
 	scale_component.tween_scale()
 	flash_component.flash()

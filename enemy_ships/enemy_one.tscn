@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_ffhhi"]
 [ext_resource type="Texture2D" uid="uid://csv6axkat2gqy" path="res://assets/ship.png" id="2_ennik"]
 [ext_resource type="Texture2D" uid="uid://cnqfau2l38lii" path="res://assets/enemies/one/ship.png" id="3_ef51i"]
-[ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="4_p7f2j"]
+[ext_resource type="PackedScene" uid="uid://xr6lsdld43g" path="res://projectiles/enemy/laser_one.tscn" id="4_dpnn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b26o5"]
 atlas = ExtResource("3_ef51i")
@@ -38,6 +38,7 @@ animation = &"move"
 
 [node name="StatsComponent" parent="." index="1"]
 health = 10
+damage = 3.0
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(2.08165e-12, 10)
@@ -55,7 +56,7 @@ build_mode = 1
 polygon = PackedVector2Array(5, 1, 5, 0, 6, 0, 6, -1, 7, -1, 7, -2, 8, -2, 8, -4, 5, -4, 5, -7, 2, -7, 2, -5, -2, -5, -2, -7, -5, -7, -5, -4, -8, -4, -8, -2, -7, -2, -7, -1, -6, -1, -6, 0, -5, 0, -5, 1, -4, 1, -4, 1, -3, 1, -2, 2, -2, 4, -1, 4, -1, 5, -1, 7, 1, 7, 1, 5, 1, 4, 2, 4, 2, 2, 3, 1, 4, 1, 4, 1)
 
 [node name="SpawnerComponent" parent="." index="10"]
-scene = ExtResource("4_p7f2j")
+scene = ExtResource("4_dpnn3")
 
 [node name="ScoreComponent" parent="." index="12"]
 adjust_amount = 1

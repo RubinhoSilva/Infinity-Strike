@@ -10,13 +10,26 @@ extends Node
 @export var hurtbox_component: HurtboxComponent
 
 func _ready() -> void:
+	var damage = 5
+	
 	# Connect the hurt signal on the hurtbox component to an anonymous function
 	# that removes health equal to the damage from the hitbox
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		#print(hitbox_component)
-		if (hitbox_component.get_parent() is EnemyLaser):
-			print(hitbox_component.get_parent().triggering_scene)
-			print(hitbox_component.get_parent().triggering_scene.get_node('StatsComponent').damage)
+		#if (hitbox_component.get_parent() is EnemyLaser):
+			# Verifica se o hitbox_component e seu pai são válidos
+		if is_instance_valid(hitbox_component) and is_instance_valid(hitbox_component.get_parent()):
+				var triggering_scene = hitbox_component.get_parent().triggering_scene
+				
+				# Verifica se a triggering_scene é válida e se possui o nó 'StatsComponent'
+				if is_instance_valid(triggering_scene):
+					var stats_component = triggering_scene.get_node_or_null('StatsComponent')
+					
+					# Se o 'StatsComponent' existir, obtém o valor de 'damage'
+					if stats_component:
+						damage = stats_component.damage
+		#else:
+			#damage = stats_component.damage
+
 			
 		
 		if hitbox_component.get_parent() is BonusHealth:
@@ -28,7 +41,8 @@ func _ready() -> void:
 		else:
 			if stats_component.shield == 0:
 				#TOMAR DANO
-				stats_component.health -= stats_component.damage
+				print('DANO: ', damage)
+				stats_component.health -= damage
 			else:
 				stats_component.shield -= 1
 	)

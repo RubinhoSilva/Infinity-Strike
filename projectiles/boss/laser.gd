@@ -6,6 +6,8 @@ extends Node2D
 @onready var flash_component: FlashComponent = $FlashComponent as FlashComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent as HitboxComponent
 
+var triggering_scene: Node = null
+
 func _ready() -> void:
 	scale_component.tween_scale()
 	flash_component.flash()
