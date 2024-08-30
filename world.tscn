@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=17 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/squad_one.tscn" id="1_kqohh"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://6ykegpdavxm5" path="res://bosses/boss_one.tscn" id="9_gcal7"]
 [ext_resource type="AudioStream" uid="uid://byxjxllnvb04q" path="res://sounds/bg_fase1.wav" id="10_8nxty"]
 [ext_resource type="PackedScene" uid="uid://dqrpfhxo1vvec" path="res://bonus/bonus_random.tscn" id="10_ij4jd"]
-[ext_resource type="PackedScene" uid="uid://cs6vlk88ooliv" path="res://enemy_ships/enemy_two.tscn" id="15_stuca"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
 shader = ExtResource("4_oqdda")
@@ -83,6 +82,3 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
-
-[node name="EnemyTwo" parent="." instance=ExtResource("15_stuca")]
-position = Vector2(143, 57)

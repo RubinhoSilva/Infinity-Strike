@@ -9,9 +9,7 @@ extends Node2D
 @onready var hurtbox_component: = $HurtboxComponent as HurtboxComponent
 @onready var hitbox_component: = $HitboxComponent as HitboxComponent
 @onready var destroyed_component: = $DestroyedComponent as DestroyedComponent
-
-
-
+@onready var score_component: = $ScoreComponent as ScoreComponent
 
 
 func _ready() -> void:
@@ -20,4 +18,10 @@ func _ready() -> void:
 		flash_component.flash()
 		shake_component.tween_shake()
 	)
+	
+	stats_component.no_health.connect(func():
+		score_component.adjust_score()
+		
+	)
+	
 	stats_component.no_health.connect(queue_free)
