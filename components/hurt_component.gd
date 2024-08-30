@@ -15,10 +15,14 @@ func _ready() -> void:
 	# Connect the hurt signal on the hurtbox component to an anonymous function
 	# that removes health equal to the damage from the hitbox
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		#if (hitbox_component.get_parent() is EnemyLaser):
-			# Verifica se o hitbox_component e seu pai são válidos
+		# Verifica se o hitbox_component e seu pai são válidos
+		# Verifica se o hitbox_component e seu pai são válidos
 		if is_instance_valid(hitbox_component) and is_instance_valid(hitbox_component.get_parent()):
-				var triggering_scene = hitbox_component.get_parent().triggering_scene
+			var parent = hitbox_component.get_parent()
+			
+			# Tenta acessar triggering_scene
+			if "triggering_scene" in parent:
+				var triggering_scene = parent.triggering_scene
 				
 				# Verifica se a triggering_scene é válida e se possui o nó 'StatsComponent'
 				if is_instance_valid(triggering_scene):
@@ -27,8 +31,6 @@ func _ready() -> void:
 					# Se o 'StatsComponent' existir, obtém o valor de 'damage'
 					if stats_component:
 						damage = stats_component.damage
-		#else:
-			#damage = stats_component.damage
 
 			
 		
@@ -41,7 +43,6 @@ func _ready() -> void:
 		else:
 			if stats_component.shield == 0:
 				#TOMAR DANO
-				print('DANO: ', damage)
 				stats_component.health -= damage
 			else:
 				stats_component.shield -= 1

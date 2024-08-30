@@ -73,6 +73,7 @@ func _ready():
 	)
 	
 	game_stats.level_changed.connect(func(new_level: int):
+		print('Novo nivel: ', new_level)
 		if new_level == 2:
 			print('BOSS 1 F')
 			spaw_bonus(BonusRandomScene)
