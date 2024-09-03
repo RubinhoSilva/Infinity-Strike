@@ -71,6 +71,17 @@ label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TimerDamageLabel" type="Label" parent="."]
+visible = false
+offset_left = 103.0
+offset_top = 7.0
+offset_right = 163.0
+offset_bottom = 20.0
+text = "DAMAGE"
+label_settings = SubResource("LabelSettings_fnahk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ship" parent="." instance=ExtResource("1_2yr80")]
 position = Vector2(81, 218)
 

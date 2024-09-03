@@ -213,6 +213,11 @@ node = NodePath("../Anchor")
 stream = ExtResource("21_yspmy")
 volume_db = -20.613
 
+[node name="DamageBonusTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 10.0
+one_shot = true
+
 [connection signal="damage_changed" from="StatsComponent" to="." method="_on_stats_component_damage_changed"]
 [connection signal="health_changed" from="StatsComponent" to="." method="_on_stats_component_health_changed"]
 [connection signal="no_health" from="StatsComponent" to="." method="_on_stats_component_no_health"]

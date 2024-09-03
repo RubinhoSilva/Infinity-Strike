@@ -26,20 +26,29 @@ func _ready() -> void:
 				
 				# Verifica se a triggering_scene é válida e se possui o nó 'StatsComponent'
 				if is_instance_valid(triggering_scene):
-					var stats_component = triggering_scene.get_node_or_null('StatsComponent')
+					var stats_component_dar_dano = triggering_scene.get_node_or_null('StatsComponent')
 					
 					# Se o 'StatsComponent' existir, obtém o valor de 'damage'
 					if stats_component:
-						damage = stats_component.damage
+						damage = stats_component_dar_dano.damage
+						
+						var bonus_damage_timer = stats_component_dar_dano.get_parent().get_node('DamageBonusTimer')
+						if bonus_damage_timer:
+							if !bonus_damage_timer.is_stopped():
+								print('DAMAGE BONUS ON')
+								damage *= 2
+						
 
 			
 		
+		#print(hitbox_component.get_parent().get_node('DamageBonusTimer'))
 		if hitbox_component.get_parent() is BonusHealth:
 			stats_component.health += 20
 		elif hitbox_component.get_parent() is BonusShield:
 			stats_component.shield += 10
 		elif hitbox_component.get_parent() is BonusDamage:
-			stats_component.damage *= 2
+			stats_component.get_parent().get_node('DamageBonusTimer').wait_time = 10.0 
+			stats_component.get_parent().get_node('DamageBonusTimer').start()
 		else:
 			if stats_component.shield == 0:
 				#TOMAR DANO

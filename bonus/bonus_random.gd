@@ -17,12 +17,15 @@ var screen_width = ProjectSettings.get_setting("display/window/size/viewport_wid
 func _ready():
 	var number_rand = randi() % 6
 
-	if (number_rand == 1):
-		spaw_bonus(DamageBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
-	elif (number_rand == 3):
-		spaw_bonus(HealthBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
-	elif (number_rand == 5):
+	if !get_parent().get_node('Ship').get_node('DamageBonusTimer').is_stopped():
 		spaw_bonus(ShieldBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
+	else:
+		if (number_rand == 1):
+			spaw_bonus(DamageBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
+		elif (number_rand == 3):
+			spaw_bonus(HealthBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
+		elif (number_rand == 5):
+			spaw_bonus(ShieldBonusScene, Vector2(randf_range(margin, screen_width-margin), -16))
 
 
 func spaw_bonus(bonus_scene: PackedScene, position: Vector2) -> void:

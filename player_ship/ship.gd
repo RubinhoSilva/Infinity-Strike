@@ -12,6 +12,7 @@ extends Node2D
 @onready var flash_component: = $FlashComponent as FlashComponent
 @onready var shake_component: = $ShakeComponent as ShakeComponent
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
+@onready var damage_bonus_timer: Timer = $DamageBonusTimer
 
 
 func _ready() -> void:
@@ -23,6 +24,13 @@ func _ready() -> void:
 	)
 	
 	stats_component.no_health.connect(queue_free)
+
+func _process(delta):
+	if !damage_bonus_timer.is_stopped():
+		get_parent().get_node('TimerDamageLabel').text = "Bonus Time: " + str(damage_bonus_timer.time_left)
+		get_parent().get_node('TimerDamageLabel').visible = true  # Mostra o Label quando o timer está ativo
+	else:
+		get_parent().get_node('TimerDamageLabel').visible = false  # Esconde o Label quando o timer está parado
 
 
 func _input(event):
@@ -44,4 +52,8 @@ func _on_stats_component_shield_changed():
 		get_parent().get_node('HealthLabel').text = "Health: " + str(stats_component.health) + "(+" + str(stats_component.shield) + ")"
 	
 func _on_stats_component_damage_changed():
-	get_parent().get_node('DamageLabel').text = "Damage: " + str(stats_component.damage)
+	var damage = stats_component.damage
+	if !damage_bonus_timer.is_stopped():
+		damage *= 2
+		
+	get_parent().get_node('DamageLabel').text = "Damage: " + str(damage)
