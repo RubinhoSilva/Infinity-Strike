@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cnyo56w6obq7q" path="res://enemy_ships/squads/squad.tscn" id="1_5kigb"]
 [ext_resource type="PackedScene" uid="uid://cc436mt0iwl8c" path="res://enemy_ships/enemy_one.tscn" id="2_a2oms"]
-[ext_resource type="Script" path="res://enemy_ships/squads/squad_two.gd" id="2_y47kw"]
+[ext_resource type="Script" path="res://enemy_ships/squads/level_one/squad_two.gd" id="2_y47kw"]
 
 [node name="SquadTwo" instance=ExtResource("1_5kigb")]
 script = ExtResource("2_y47kw")

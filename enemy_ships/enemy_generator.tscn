@@ -29,3 +29,21 @@ process_mode = 4
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="SquadFiveSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadSixSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadSevenSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
