@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cs6vlk88ooliv" path="res://enemy_ships/enemy_two.tscn" id="3_m1g2s"]
 
 [node name="SquadSeven" instance=ExtResource("1_03o34")]
+position = Vector2(-28, 4)
 script = ExtResource("2_ua3wr")
 
 [node name="EnemyTwo" parent="." index="0" instance=ExtResource("3_m1g2s")]

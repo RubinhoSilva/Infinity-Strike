@@ -36,46 +36,30 @@ func _ready():
 	squad_two_spawn_timer.timeout.connect(handle_spawn.bind(SquadTwoScene, squad_two_spawn_timer, 3))
 	squad_three_spawn_timer.timeout.connect(handle_spawn.bind(SquadThreeScene, squad_three_spawn_timer, 5))
 	
-	squad_four_spawn_timer.timeout.connect(handle_spawn.bind(SquadFourScene, squad_four_spawn_timer, 2))
+	squad_four_spawn_timer.timeout.connect(handle_spawn.bind(SquadFourScene, squad_four_spawn_timer, 3))
 	squad_five_spawn_timer.timeout.connect(handle_spawn.bind(SquadFiveScene, squad_five_spawn_timer, 4))
-	squad_six_spawn_timer.timeout.connect(handle_spawn.bind(SquadSixScene, squad_six_spawn_timer, 6))
-	squad_seven_spawn_timer.timeout.connect(handle_spawn.bind(SquadSevenScene, squad_seven_spawn_timer, 8))
+	squad_six_spawn_timer.timeout.connect(handle_spawn.bind(SquadSixScene, squad_six_spawn_timer, 5))
+	squad_seven_spawn_timer.timeout.connect(handle_spawn.bind(SquadSevenScene, squad_seven_spawn_timer, 6))
 	
 
 	game_stats.score_changed.connect(func(new_score: int):
 		if game_stats.level == 1:
 			if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-			   	squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-				squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
 				new_score >= randi_range(7, 10):
 					print('STARTING SQUAD 2')
 					spaw_bonus(BonusRandomScene)
 					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 
-			if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-			   	squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-				squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-			   	new_score >= randi_range(12, 15):
-					print('STOP SQUAD 2')
-					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
-					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-
-			if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-				squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-				squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
+			if squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(20, 25):
 					print('STARTING SQUAD 3')
 					spaw_bonus(BonusRandomScene)
-					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 					
-			if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-				squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_DISABLED and \
-				squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+			if squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(40, 50):
-					print('STOP SQUAD 3')
 					print('BOSS 1')
 					spaw_bonus(BonusRandomScene)
 					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
@@ -85,50 +69,36 @@ func _ready():
 				
 				
 		if game_stats.level == 2:
-			if 	squad_one_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-			squad_four_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+			if 	squad_four_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 			new_score >= randi_range(80, 100):
-				print('STOP SQUAD 4')
-				print('START SQUAD 5')
-				spaw_bonus(BonusRandomScene)
-				squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				print('STARTING SQUAD 5')
 				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_five_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				
 			if 	squad_five_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-				squad_two_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(110, 130):
-				print('STOP SQUAD 5')
-				print('START SQUAD 6')
+				print('STARTING SQUAD 6')
 				spaw_bonus(BonusRandomScene)
-				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_five_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_six_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT		
 				
 			if 	squad_six_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-				squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(140, 160):
-				print('STOP SQUAD 6')
-				print('START SQUAD 7')
+				print('STARTING SQUAD 7')
 				spaw_bonus(BonusRandomScene)
 				squad_six_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT					
 				
 							
 	)
 	
 	game_stats.level_changed.connect(func(new_level: int):
-		print('Novo nivel: ', new_level)
 		if new_level == 2:
 			print('BOSS 1 F')
+			print('STARTING SQUAD 4 ')
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
-			squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 			squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 	)
 

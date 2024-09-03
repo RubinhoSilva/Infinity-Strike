@@ -7,7 +7,6 @@ extends Node
 	set(value):
 		health = value
 		
-		print('health_changed')
 		# Signal out that the health has changed
 		health_changed.emit()
 		

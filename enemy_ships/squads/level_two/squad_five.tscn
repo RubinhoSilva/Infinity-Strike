@@ -8,7 +8,7 @@
 script = ExtResource("2_wekta")
 
 [node name="EnemyTwo" parent="." index="0" instance=ExtResource("4_852kb")]
-position = Vector2(57, -4)
+position = Vector2(29, -2)
 
 [node name="EnemyTwo2" parent="." index="1" instance=ExtResource("4_852kb")]
-position = Vector2(0, -4)
+position = Vector2(-26, -2)

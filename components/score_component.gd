@@ -12,7 +12,8 @@ extends Node
 # Use the adjust_amount when called but we could optionally pass in a different amount.
 func adjust_score(amount: int = adjust_amount):
 	print(get_parent())
-	if(get_parent() is Boss):
-		game_stats.level += 1
+	if(get_parent() is BossOne):
+		#Verificando 1 a 1 pq tava dando erro de incremento
+		game_stats.level = 2
 		
 	game_stats.score += amount
