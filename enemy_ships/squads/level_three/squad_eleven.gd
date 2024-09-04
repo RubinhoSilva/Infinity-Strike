@@ -8,7 +8,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	var velocity = randi_range(5, 25)
+	var velocity = 10
 		
 	if enemy_three:
 		enemy_three.get_node('MoveComponent').velocity.y = velocity

@@ -53,11 +53,14 @@ func _ready():
 	squad_six_spawn_timer.timeout.connect(handle_spawn.bind(SquadSixScene, squad_six_spawn_timer, 5))
 	squad_seven_spawn_timer.timeout.connect(handle_spawn.bind(SquadSevenScene, squad_seven_spawn_timer, 6))
 
+	#Daqui para baixo eles são muito grande, se gera aleatorio o eixo acaba saindo no canto e ficando estranho
+	#30, -30 solta sempre no meio la em cima
+	#O tempo que vai sair uma squad é definido no timer
 	squad_eight_spawn_timer.timeout.connect(spawn_fixed.bind(SquadEightScene, Vector2(30, -30)))
-	squad_nine_spawn_timer.timeout.connect(handle_spawn.bind(SquadNineScene, squad_nine_spawn_timer, 4))
-	squad_ten_spawn_timer.timeout.connect(handle_spawn.bind(SquadTenScene, squad_ten_spawn_timer, 5))
-	squad_eleven_spawn_timer.timeout.connect(handle_spawn.bind(SquadElevenScene, squad_eleven_spawn_timer, 6))
-	squad_twelve_spawn_timer.timeout.connect(handle_spawn.bind(SquadTwelveScene, squad_twelve_spawn_timer, 8))
+	squad_nine_spawn_timer.timeout.connect(spawn_fixed.bind(SquadNineScene, Vector2(30, -30)))
+	squad_ten_spawn_timer.timeout.connect(spawn_fixed.bind(SquadTenScene, Vector2(30, -30)))
+	squad_eleven_spawn_timer.timeout.connect(spawn_fixed.bind(SquadElevenScene, Vector2(0, -60)))
+	squad_twelve_spawn_timer.timeout.connect(spawn_fixed.bind(SquadTwelveScene, Vector2(0, -90)))
 	
 
 	game_stats.score_changed.connect(func(new_score: int):
