@@ -5,7 +5,6 @@ extends Node2D
 @onready var enemy_three: = $EnemyThree as Node
 
 func _ready() -> void:
-	var sign_ = (randi() % 2) * 2 - 1
 	var velocity = randi_range(5, 25)
 	
 	if enemy_one:

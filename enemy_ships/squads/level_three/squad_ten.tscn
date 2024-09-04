@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ocddw6fj5kvn"]
+
+[ext_resource type="Script" path="res://enemy_ships/squads/level_three/squad_ten.gd" id="1_7lx8c"]
+[ext_resource type="PackedScene" uid="uid://dea0uuqitw0mg" path="res://enemy_ships/enemy_three.tscn" id="1_limt0"]
+
+[node name="SquadTen" type="Node2D"]
+script = ExtResource("1_7lx8c")
+
+[node name="EnemyThree" parent="." instance=ExtResource("1_limt0")]
+position = Vector2(38, 31)
+
+[node name="EnemyThree2" parent="." instance=ExtResource("1_limt0")]
+position = Vector2(116, 33)

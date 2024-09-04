@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://eofw586elld5"]
+
+[ext_resource type="Script" path="res://enemy_ships/squads/level_three/squad_nine.gd" id="1_rfgs4"]
+[ext_resource type="PackedScene" uid="uid://cs6vlk88ooliv" path="res://enemy_ships/enemy_two.tscn" id="2_w6rdm"]
+[ext_resource type="PackedScene" uid="uid://dea0uuqitw0mg" path="res://enemy_ships/enemy_three.tscn" id="3_4iwaw"]
+
+[node name="SquadNine" type="Node2D"]
+script = ExtResource("1_rfgs4")
+
+[node name="EnemyTwo" parent="." instance=ExtResource("2_w6rdm")]
+position = Vector2(51, 41)
+
+[node name="EnemyTwo2" parent="." instance=ExtResource("2_w6rdm")]
+position = Vector2(113, 40)
+
+[node name="EnemyThree" parent="." instance=ExtResource("3_4iwaw")]
+position = Vector2(79, 8)
