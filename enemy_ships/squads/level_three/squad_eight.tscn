@@ -9,10 +9,10 @@
 script = ExtResource("1_sroae")
 
 [node name="EnemyOne" parent="." instance=ExtResource("1_o84t6")]
-position = Vector2(13, 41)
+position = Vector2(22, 23)
 
 [node name="EnemyTwo" parent="." instance=ExtResource("2_fj30r")]
-position = Vector2(88, 38)
+position = Vector2(76, 21)
 
 [node name="EnemyThree" parent="." instance=ExtResource("3_a5x7i")]
 position = Vector2(47, 3)

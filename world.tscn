@@ -113,6 +113,3 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
-
-[node name="SquadEight" parent="." instance=ExtResource("20_11033")]
-position = Vector2(36, 49)

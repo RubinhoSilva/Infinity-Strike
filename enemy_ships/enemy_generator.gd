@@ -36,7 +36,7 @@ extends Node2D
 
 
 
-var margin = 14
+var margin = 30
 var screen_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 
 
@@ -52,8 +52,8 @@ func _ready():
 	squad_five_spawn_timer.timeout.connect(handle_spawn.bind(SquadFiveScene, squad_five_spawn_timer, 4))
 	squad_six_spawn_timer.timeout.connect(handle_spawn.bind(SquadSixScene, squad_six_spawn_timer, 5))
 	squad_seven_spawn_timer.timeout.connect(handle_spawn.bind(SquadSevenScene, squad_seven_spawn_timer, 6))
-	
-	squad_eight_spawn_timer.timeout.connect(handle_spawn.bind(SquadEightScene, squad_eight_spawn_timer, 3))
+
+	squad_eight_spawn_timer.timeout.connect(spawn_fixed.bind(SquadEightScene, Vector2(30, -30)))
 	squad_nine_spawn_timer.timeout.connect(handle_spawn.bind(SquadNineScene, squad_nine_spawn_timer, 4))
 	squad_ten_spawn_timer.timeout.connect(handle_spawn.bind(SquadTenScene, squad_ten_spawn_timer, 5))
 	squad_eleven_spawn_timer.timeout.connect(handle_spawn.bind(SquadElevenScene, squad_eleven_spawn_timer, 6))
@@ -84,7 +84,7 @@ func _ready():
 					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-					spawn_boss(BossOneScene, Vector2(-3, 7))
+					spawn_fixed(BossOneScene, Vector2(-3, 7))
 				
 				
 		if game_stats.level == 2:
@@ -117,7 +117,7 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				spawn_boss(BossTwoScene, Vector2(-3, 7))		
+				spawn_fixed(BossTwoScene, Vector2(-3, 7))		
 				
 				
 				
@@ -155,7 +155,7 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_eleven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				spawn_boss(BossTwoScene, Vector2(-3, 7))				
+				spawn_fixed(BossTwoScene, Vector2(-3, 7))				
 				
 							
 	)
@@ -185,7 +185,7 @@ func handle_spawn(enemy_scene: PackedScene, timer: Timer, time_offset: float = 1
 	var spawn_rate = time_offset / (0.5 + (game_stats.score * 0.01))
 	timer.start(spawn_rate + randf_range(0.25, 0.5))
 	
-func spawn_boss(boss_scene: PackedScene, position: Vector2) -> void:
+func spawn_fixed(boss_scene: PackedScene, position: Vector2) -> void:
 	spawner_component.scene = boss_scene
 	spawner_component.spawn(position)
 	
