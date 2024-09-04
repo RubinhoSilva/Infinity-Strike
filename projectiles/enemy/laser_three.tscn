@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu6i7r1kg78sm"]
+
+[ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="1_puork"]
+[ext_resource type="Texture2D" uid="uid://d13per6y621le" path="res://assets/enemies/three/laser.png" id="2_eqhf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qjof"]
+size = Vector2(5.25, 4.875)
+
+[node name="LaserThree" instance=ExtResource("1_puork")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1.19209e-07, -1.19209e-07)
+scale = Vector2(0.591667, 0.55)
+texture = ExtResource("2_eqhf7")
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_3qjof")

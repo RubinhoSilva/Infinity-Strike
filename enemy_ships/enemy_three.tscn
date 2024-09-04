@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dea0uuqitw0mg"]
+
+[ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_23q8b"]
+[ext_resource type="Texture2D" uid="uid://d2uasi7hcyjar" path="res://assets/enemies/three/ship.png" id="2_4n2xk"]
+[ext_resource type="PackedScene" uid="uid://cu6i7r1kg78sm" path="res://projectiles/enemy/laser_three.tscn" id="3_u30nm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6idys"]
+atlas = ExtResource("2_4n2xk")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj6xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6idys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyThree" instance=ExtResource("1_23q8b")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_oj6xm")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 30
+damage = 10.0
+speed = 200
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 30)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]
+polygon = PackedVector2Array(-23, 12, -13, 12, -13, 11, -12, 11, -12, 10, -11, 10, -11, 9, -10, 9, -10, 10, -9, 10, -9, 11, -8, 11, -8, 12, -6, 12, -6, 14, -3, 14, -3, 11, -2, 11, -2, 10, -1, 10, -1, 11, 1, 11, 1, 10, 2, 10, 2, 11, 3, 11, 3, 14, 6, 14, 6, 12, 8, 12, 8, 11, 9, 11, 9, 10, 10, 10, 10, 9, 11, 9, 11, 10, 12, 10, 12, 11, 13, 11, 13, 12, 24, 12, 24, 11, 25, 11, 25, 10, 26, 10, 26, 9, 27, 9, 27, 8, 28, 8, 28, 7, 29, 7, 29, 3, 28, 3, 28, 1, 27, 1, 27, -1, 26, -1, 26, -3, 25, -3, 25, -5, 24, -5, 24, -7, 23, -7, 23, -8, 22, -8, 22, -9, 21, -9, 21, -11, 20, -11, 20, -1, 17, 1, 8, 1, 8, 0, 14, -4, 14, -17, 14, -19, 4, -19, -15, -19, -12, -2, -11, 1, -17, 1, -18, -12, -21, -13, -22, -10, -24, -7, -29, 3, -29, 7, -28, 7, -28, 8, -27, 8, -27, 9, -26, 9, -26, 10, -25, 10, -25, 11, -24, 11, -24, 12)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+polygon = PackedVector2Array(-23, 12, -13, 12, -13, 11, -12, 11, -12, 10, -11, 10, -11, 9, -10, 9, -10, 10, -9, 10, -9, 11, -8, 11, -8, 12, -6, 12, -6, 14, -3, 14, -3, 11, -2, 11, -2, 10, -1, 10, -1, 11, 1, 11, 1, 10, 2, 10, 2, 11, 3, 11, 3, 14, 6, 14, 6, 12, 8, 12, 8, 11, 9, 11, 9, 10, 10, 10, 10, 9, 11, 9, 11, 10, 12, 10, 12, 11, 13, 11, 13, 12, 24, 12, 24, 11, 25, 11, 25, 10, 26, 10, 26, 9, 27, 9, 27, 8, 28, 8, 28, 7, 29, 7, 29, 3, 28, 3, 28, 1, 27, 1, 27, -1, 26, -1, 26, -3, 25, -3, 25, -5, 24, -5, 24, -7, 23, -7, 23, -8, 22, -8, 22, -9, 21, -9, 21, -11, 20, -11, 20, -1, 17, 1, 8, 1, 8, 0, 14, -4, 14, -17, 14, -19, 4, -19, -15, -19, -12, -2, -11, 1, -17, 1, -18, -12, -21, -13, -22, -10, -24, -7, -29, 3, -29, 7, -28, 7, -28, 8, -27, 8, -27, 9, -26, 9, -26, 10, -25, 10, -25, 11, -24, 11, -24, 12)
+
+[node name="SpawnerComponent" parent="." index="10"]
+scene = ExtResource("3_u30nm")
+
+[node name="ScoreComponent" parent="." index="12"]
+adjust_amount = 3
+
+[node name="FireRateTimer" parent="." index="14"]
+wait_time = 1.0
+
+[node name="LeftMuzzle" type="Marker2D" parent="." index="19"]
+position = Vector2(-19, 12)
+
+[node name="RightMuzzle" type="Marker2D" parent="." index="20"]
+position = Vector2(20, 12)
