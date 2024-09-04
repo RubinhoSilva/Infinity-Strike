@@ -7,6 +7,11 @@ extends Node2D
 @export var SquadFiveScene: PackedScene
 @export var SquadSixScene: PackedScene
 @export var SquadSevenScene: PackedScene
+@export var SquadEightScene: PackedScene
+@export var SquadNineScene: PackedScene
+@export var SquadTenScene: PackedScene
+@export var SquadElevenScene: PackedScene
+@export var SquadTwelveScene: PackedScene
 
 @export var BossOneScene: PackedScene
 @export var BossTwoScene: PackedScene
@@ -23,6 +28,12 @@ extends Node2D
 @onready var squad_five_spawn_timer: Timer = $SquadFiveSpawnTimer
 @onready var squad_six_spawn_timer: Timer = $SquadSixSpawnTimer
 @onready var squad_seven_spawn_timer: Timer = $SquadSevenSpawnTimer
+@onready var squad_eight_spawn_timer: Timer = $SquadEightSpawnTimer
+@onready var squad_nine_spawn_timer: Timer = $SquadNineSpawnTimer
+@onready var squad_ten_spawn_timer: Timer = $SquadTenSpawnTimer
+@onready var squad_eleven_spawn_timer: Timer = $SquadElevenSpawnTimer
+@onready var squad_twelve_spawn_timer: Timer = $SquadTwelveSpawnTimer
+
 
 
 var margin = 14
@@ -41,6 +52,12 @@ func _ready():
 	squad_five_spawn_timer.timeout.connect(handle_spawn.bind(SquadFiveScene, squad_five_spawn_timer, 4))
 	squad_six_spawn_timer.timeout.connect(handle_spawn.bind(SquadSixScene, squad_six_spawn_timer, 5))
 	squad_seven_spawn_timer.timeout.connect(handle_spawn.bind(SquadSevenScene, squad_seven_spawn_timer, 6))
+	
+	squad_eight_spawn_timer.timeout.connect(handle_spawn.bind(SquadEightScene, squad_eight_spawn_timer, 3))
+	squad_nine_spawn_timer.timeout.connect(handle_spawn.bind(SquadNineScene, squad_nine_spawn_timer, 4))
+	squad_ten_spawn_timer.timeout.connect(handle_spawn.bind(SquadTenScene, squad_ten_spawn_timer, 5))
+	squad_eleven_spawn_timer.timeout.connect(handle_spawn.bind(SquadElevenScene, squad_eleven_spawn_timer, 6))
+	squad_twelve_spawn_timer.timeout.connect(handle_spawn.bind(SquadTwelveScene, squad_twelve_spawn_timer, 8))
 	
 
 	game_stats.score_changed.connect(func(new_score: int):
@@ -100,6 +117,44 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				spawn_boss(BossTwoScene, Vector2(-3, 7))		
+				
+				
+				
+		if game_stats.level == 3:
+			if 	squad_eight_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(250, 300):
+				print('STARTING SQUAD 9')
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_eight_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				squad_nine_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+				
+			if 	squad_nine_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(350, 400):
+				print('STARTING SQUAD 10')
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_nine_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				squad_ten_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT		
+				
+			if 	squad_ten_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(400, 450):
+				print('STARTING SQUAD 11')
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_ten_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				squad_eleven_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT		
+				
+			if 	squad_eleven_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(500, 600):
+				print('BOSS 3')
+				clear_enemies(get_parent())
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+				squad_eleven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				spawn_boss(BossTwoScene, Vector2(-3, 7))				
 				
 							
@@ -120,6 +175,7 @@ func _ready():
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
 			squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+			squad_eight_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 	)
 
 

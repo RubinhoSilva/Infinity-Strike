@@ -47,3 +47,33 @@ process_mode = 4
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="SquadEightSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadNineSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadTenSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadElevenSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SquadTwelveSpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 2.0
+one_shot = true
+autostart = true

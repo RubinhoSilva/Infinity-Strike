@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=27 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -19,6 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://bt8xibplnkhya" path="res://enemy_ships/squads/level_two/squad_six.tscn" id="14_8acaf"]
 [ext_resource type="PackedScene" uid="uid://sd4w7rgmfcs0" path="res://enemy_ships/squads/level_two/squad_seven.tscn" id="15_p6kwe"]
 [ext_resource type="PackedScene" uid="uid://bd6e2guvjgmra" path="res://bosses/boss_two.tscn" id="19_12smg"]
+[ext_resource type="PackedScene" uid="uid://djnueygln25f5" path="res://enemy_ships/squads/level_three/squad_eight.tscn" id="20_11033"]
+[ext_resource type="PackedScene" uid="uid://eofw586elld5" path="res://enemy_ships/squads/level_three/squad_nine.tscn" id="20_b0f0m"]
+[ext_resource type="PackedScene" uid="uid://ocddw6fj5kvn" path="res://enemy_ships/squads/level_three/squad_ten.tscn" id="20_nrgeq"]
+[ext_resource type="PackedScene" uid="uid://bbnias1xayh0n" path="res://enemy_ships/squads/level_three/squad_twelve.tscn" id="20_rfb10"]
+[ext_resource type="PackedScene" uid="uid://3ayh3a80ppyu" path="res://enemy_ships/squads/level_three/squad_eleven.tscn" id="20_yl0ca"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
 shader = ExtResource("4_oqdda")
@@ -94,6 +99,11 @@ SquadFourScene = ExtResource("12_2qcr7")
 SquadFiveScene = ExtResource("13_lx6dw")
 SquadSixScene = ExtResource("14_8acaf")
 SquadSevenScene = ExtResource("15_p6kwe")
+SquadEightScene = ExtResource("20_11033")
+SquadNineScene = ExtResource("20_b0f0m")
+SquadTenScene = ExtResource("20_nrgeq")
+SquadElevenScene = ExtResource("20_yl0ca")
+SquadTwelveScene = ExtResource("20_rfb10")
 BossOneScene = ExtResource("9_gcal7")
 BossTwoScene = ExtResource("19_12smg")
 BonusRandomScene = ExtResource("10_ij4jd")
