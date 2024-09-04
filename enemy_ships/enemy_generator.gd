@@ -9,6 +9,7 @@ extends Node2D
 @export var SquadSevenScene: PackedScene
 
 @export var BossOneScene: PackedScene
+@export var BossTwoScene: PackedScene
 
 @export var BonusRandomScene: PackedScene
 
@@ -87,7 +88,17 @@ func _ready():
 				print('STARTING SQUAD 7')
 				spaw_bonus(BonusRandomScene)
 				squad_six_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT					
+				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT		
+				
+			if 	squad_seven_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(180, 210):
+				print('BOSS 2')
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				spawn_boss(BossTwoScene, Vector2(-3, 7))				
 				
 							
 	)
@@ -100,6 +111,13 @@ func _ready():
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
 			squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+		elif new_level == 3:
+			print('BOSS 2 F')
+			print('STARTING SQUAD 8')
+			spaw_bonus(BonusRandomScene)
+			spaw_bonus(BonusRandomScene)
+			spaw_bonus(BonusRandomScene)
+			squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 	)
 
 

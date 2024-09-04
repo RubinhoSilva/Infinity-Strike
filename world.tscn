@@ -95,6 +95,7 @@ SquadFiveScene = ExtResource("13_lx6dw")
 SquadSixScene = ExtResource("14_8acaf")
 SquadSevenScene = ExtResource("15_p6kwe")
 BossOneScene = ExtResource("9_gcal7")
+BossTwoScene = ExtResource("19_12smg")
 BonusRandomScene = ExtResource("10_ij4jd")
 game_stats = ExtResource("4_punto")
 
@@ -102,6 +103,3 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
-
-[node name="BossTwo" parent="." instance=ExtResource("19_12smg")]
-position = Vector2(5, 59)
