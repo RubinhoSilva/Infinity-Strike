@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd6e2guvjgmra"]
+
+[ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_wrkhd"]
+[ext_resource type="Script" path="res://bosses/boss_two.gd" id="2_kw1jn"]
+[ext_resource type="Texture2D" uid="uid://ccx71st4avqbh" path="res://assets/bosses/boss_two.png" id="3_yl8vv"]
+[ext_resource type="PackedScene" uid="uid://dabapskee12jh" path="res://projectiles/boss/laser_two.tscn" id="4_fihw4"]
+
+[node name="BossTwo" instance=ExtResource("1_wrkhd")]
+script = ExtResource("2_kw1jn")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(82, 40)
+scale = Vector2(1.13756, 1)
+texture = ExtResource("3_yl8vv")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 2000
+
+[node name="SpawnerComponent" parent="." index="5"]
+scene = ExtResource("4_fihw4")
+
+[node name="ScoreComponent" parent="." index="7"]
+adjust_amount = 10
+
+[node name="FireRateTimer" parent="." index="8"]
+wait_time = 1.5
+
+[node name="FlashComponent" parent="." index="9" node_paths=PackedStringArray("sprite")]
+sprite = NodePath("../Sprite2D")
+flash_duration = 0.01
+
+[node name="ScaleComponent" parent="." index="10" node_paths=PackedStringArray("sprite")]
+sprite = NodePath("../Sprite2D")
+scale_amount = Vector2(0.1, 0.1)
+
+[node name="ShakeComponent" parent="." index="11" node_paths=PackedStringArray("node")]
+node = NodePath("..")
+shake_amount = 0.1
+shake_duration = 0.1
+
+[node name="Muzzle1" type="Marker2D" parent="." index="12"]
+position = Vector2(37, 46)
+
+[node name="Muzzle2" type="Marker2D" parent="." index="13"]
+position = Vector2(53, 47)
+
+[node name="Muzzle3" type="Marker2D" parent="." index="14"]
+position = Vector2(73, 46)
+
+[node name="Muzzle4" type="Marker2D" parent="." index="15"]
+position = Vector2(88, 46)
+
+[node name="Muzzle5" type="Marker2D" parent="." index="16"]
+position = Vector2(107, 47)
+
+[node name="Muzzle6" type="Marker2D" parent="." index="17"]
+position = Vector2(122, 46)

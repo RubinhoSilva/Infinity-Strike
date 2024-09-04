@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpdfam6vcs4ku"]
+[gd_scene load_steps=3 format=3 uid="uid://cpdfam6vcs4ku"]
 
 [ext_resource type="PackedScene" uid="uid://bh5qyfsgf3j27" path="res://projectiles/enemy/laser.tscn" id="1_cnmh0"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1qjpn"]
+load_path = "res://.godot/imported/laser_two.png-eb18d54df4987a6a0c78babcdb2656a3.ctex"
+
 [node name="LaserTwo" instance=ExtResource("1_cnmh0")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("CompressedTexture2D_1qjpn")
+
+[node name="MoveComponent" parent="." index="1"]
+velocity = Vector2(0, 350)

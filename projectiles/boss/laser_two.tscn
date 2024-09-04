@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dabapskee12jh"]
+
+[ext_resource type="PackedScene" uid="uid://c4qxjdbtgdqsx" path="res://projectiles/boss/laser.tscn" id="1_pvqk0"]
+[ext_resource type="Texture2D" uid="uid://dusbqlwmm5g2t" path="res://assets/bosses/laser_two.png" id="2_evyi4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfkpn"]
+radius = 2.0
+
+[node name="LaserTwo" instance=ExtResource("1_pvqk0")]
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = -0.00148127
+texture = ExtResource("2_evyi4")
+
+[node name="MoveComponent" parent="." index="1"]
+velocity = Vector2(0, 100)
+
+[node name="FlashComponent" parent="." index="4"]
+flash_duration = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_mfkpn")

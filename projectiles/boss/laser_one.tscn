@@ -15,10 +15,10 @@ scale = Vector2(3.75, 2.90625)
 texture = ExtResource("2_s8eiq")
 
 [node name="MoveComponent" parent="." index="1"]
-velocity = Vector2(2.08165e-12, 350)
+velocity = Vector2(0, 300)
 
 [node name="ScaleComponent" parent="." index="3"]
-scale_amount = Vector2(1.5, 1.5)
+scale_amount = Vector2(0, 0)
 
 [node name="FlashComponent" parent="." index="4"]
 flash_duration = 0.4
