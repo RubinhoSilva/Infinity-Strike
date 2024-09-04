@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_1rrjv")
-score = 200
-level = 3
+score = 0
+level = 1
 highscore = 0
