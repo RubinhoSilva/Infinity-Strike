@@ -62,6 +62,7 @@ func _ready():
 			if squad_three_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(40, 50):
 					print('BOSS 1')
+					clear_enemies(get_parent())
 					spaw_bonus(BonusRandomScene)
 					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
@@ -93,6 +94,7 @@ func _ready():
 			if 	squad_seven_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(180, 210):
 				print('BOSS 2')
+				clear_enemies(get_parent())
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
@@ -134,3 +136,15 @@ func spawn_boss(boss_scene: PackedScene, position: Vector2) -> void:
 func spaw_bonus(bonus_scene: PackedScene) -> void:
 	spawner_component.scene = bonus_scene
 	spawner_component.spawn(Vector2(0, 0))
+
+
+func clear_enemies(node):
+	# Itera sobre todos os filhos do nó atual
+	for child in node.get_children():
+		# Se o nó for do tipo Enemy, remove-o
+		if child is Enemy:
+			node.remove_child(child)
+			child.queue_free()
+		# Se o nó tiver filhos, chama a função recursivamente
+		else:
+			clear_enemies(child)
