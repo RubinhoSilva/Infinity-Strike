@@ -42,13 +42,13 @@ polygon = PackedVector2Array(-12, 5, -5, 0, -5, -1, -4, -1, -4, -2, -4, -6, -3, 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(-12, 5, -5, 0, -5, -1, -4, -1, -4, -2, -4, -6, -3, -6, -3, -10, -2, -12, -1, -11, -1, -9, 1, -9, 2, -11, 4, -10, 4, -6, 4, -2, 5, 0, 13, 5, 13, 11, 12, 11, 12, 10, 11, 10, 11, 9, 11, 9, 10, 9, 7, 7, 2, 7, 1, 8, 1, 7, -1, 7, -1, 8, -2, 7, -7, 7, -7, 7, -8, 8, -10, 9, -11, 9, -11, 10, -12, 10, -13, 10, -13, 10, -13, 5)
 
-[node name="SpawnerComponent" parent="." index="10"]
+[node name="SpawnerComponent" parent="." index="11"]
 scene = ExtResource("3_iftf1")
 
-[node name="ScoreComponent" parent="." index="12"]
+[node name="ScoreComponent" parent="." index="13"]
 adjust_amount = 2
 
-[node name="FireRateTimer" parent="." index="14"]
+[node name="FireRateTimer" parent="." index="15"]
 wait_time = 2.0
 
 [node name="LeftMuzzle" type="Marker2D" parent="." index="19"]
