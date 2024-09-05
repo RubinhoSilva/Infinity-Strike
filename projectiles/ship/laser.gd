@@ -21,7 +21,4 @@ func _ready() -> void:
 	hitbox_component.hit_hurtbox.connect(func(hurtbox: HurtboxComponent):
 		if hurtbox.get_parent() is Boss:
 			spawner_component_destroy.spawn(position)
-			#var explosion = ExplosionScene.instance()
-			#add_child(explosion)
-			
 	)
