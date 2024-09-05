@@ -13,11 +13,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
-		scale_component.tween_scale()
-		flash_component.flash()
-		shake_component.tween_shake()
-	)
+	#hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
+		#scale_component.tween_scale()
+		#flash_component.flash()
+		#shake_component.tween_shake()
+	#)
 	
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
