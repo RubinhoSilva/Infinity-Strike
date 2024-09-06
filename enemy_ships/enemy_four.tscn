@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0p3lvrvcsiy6"]
+[gd_scene load_steps=6 format=3 uid="uid://c0p3lvrvcsiy6"]
 
 [ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_n7etl"]
 [ext_resource type="Texture2D" uid="uid://dxn2osarp04fb" path="res://assets/enemies/four/ship.png" id="2_wwq6w"]
+[ext_resource type="PackedScene" uid="uid://cgxq53mssgm3i" path="res://projectiles/enemy/laser_four.tscn" id="3_5vjwe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_122ma"]
 atlas = ExtResource("2_wwq6w")
@@ -30,8 +31,14 @@ damage = 15.0
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(0, 40)
 
+[node name="SpawnerComponent" parent="." index="11"]
+scene = ExtResource("3_5vjwe")
+
 [node name="ScoreComponent" parent="." index="13"]
 adjust_amount = 4
+
+[node name="FireRateTimer" parent="." index="15"]
+wait_time = 0.7
 
 [node name="LeftMuzzle" type="Marker2D" parent="." index="20"]
 position = Vector2(-6, 14)
