@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0yfxbp3j25yb"
-path="res://.godot/imported/Chefe 3.png-73f8d25db1780ac584e2cc91ea65b8f8.ctex"
+uid="uid://c108xelpmrbq5"
+path="res://.godot/imported/laser_three.png-ff31f7add36247dec0edd1f2f00594db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bosses/Chefe 3.png"
-dest_files=["res://.godot/imported/Chefe 3.png-73f8d25db1780ac584e2cc91ea65b8f8.ctex"]
+source_file="res://assets/bosses/laser_three.png"
+dest_files=["res://.godot/imported/laser_three.png-ff31f7add36247dec0edd1f2f00594db.ctex"]
 
 [params]
 

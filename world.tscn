@@ -107,6 +107,7 @@ SquadElevenScene = ExtResource("20_yl0ca")
 SquadTwelveScene = ExtResource("20_rfb10")
 BossOneScene = ExtResource("9_gcal7")
 BossTwoScene = ExtResource("19_12smg")
+BossThreeScene = ExtResource("25_iqd7j")
 BonusRandomScene = ExtResource("10_ij4jd")
 game_stats = ExtResource("4_punto")
 
@@ -114,6 +115,3 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
-
-[node name="BossThree" parent="." instance=ExtResource("25_iqd7j")]
-position = Vector2(80, 64)

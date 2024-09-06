@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcwg550orgr2q"]
+[gd_scene load_steps=5 format=3 uid="uid://dcwg550orgr2q"]
 
 [ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_vfrbb"]
-[ext_resource type="Texture2D" uid="uid://d0yfxbp3j25yb" path="res://assets/bosses/Chefe 3.png" id="2_kwue8"]
+[ext_resource type="Texture2D" uid="uid://d0yfxbp3j25yb" path="res://assets/bosses/boss_three.png" id="2_kwue8"]
+[ext_resource type="Script" path="res://bosses/boss_three.gd" id="2_mm0v8"]
+[ext_resource type="PackedScene" uid="uid://6sgaut0ree0v" path="res://projectiles/boss/laser_three.tscn" id="3_ope33"]
 
 [node name="BossThree" instance=ExtResource("1_vfrbb")]
 scale = Vector2(0.06, 0.06)
+script = ExtResource("2_mm0v8")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_kwue8")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 3000
+damage = 30.0
+
+[node name="SpawnerComponent" parent="." index="5"]
+scene = ExtResource("3_ope33")
+
+[node name="ScoreComponent" parent="." index="7"]
+adjust_amount = 20
 
 [node name="MoveComponent" parent="." index="9"]
 velocity = Vector2(30, 0)

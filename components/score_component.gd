@@ -14,9 +14,14 @@ func adjust_score(amount: int = adjust_amount):
 	if(get_parent() is BossOne):
 		#Verificando 1 a 1 pq tava dando erro de incremento
 		game_stats.level = 2
-		get_parent().get_parent().get_node('Ship').get_node('StatsComponent').damage *= 2
+		get_parent().get_parent().get_node('Ship').get_node('StatsComponent').damage = 10
 	elif(get_parent() is BossTwo):
 		#Verificando 1 a 1 pq tava dando erro de incremento
 		game_stats.level = 3
+		get_parent().get_parent().get_node('Ship').get_node('StatsComponent').damage = 15
+	elif(get_parent() is BossThree):
+		#Verificando 1 a 1 pq tava dando erro de incremento
+		game_stats.level = 4
+		get_parent().get_parent().get_node('Ship').get_node('StatsComponent').damage = 30
 		
 	game_stats.score += amount

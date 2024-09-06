@@ -15,6 +15,7 @@ extends Node2D
 
 @export var BossOneScene: PackedScene
 @export var BossTwoScene: PackedScene
+@export var BossThreeScene: PackedScene
 
 @export var BonusRandomScene: PackedScene
 
@@ -158,7 +159,7 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_eleven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				spawn_fixed(BossTwoScene, Vector2(-3, 7))				
+				spawn_fixed(BossThreeScene, Vector2(90, 45))				
 				
 							
 	)
