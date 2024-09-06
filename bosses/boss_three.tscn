@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcwg550orgr2q"]
+
+[ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_vfrbb"]
+[ext_resource type="Texture2D" uid="uid://d0yfxbp3j25yb" path="res://assets/bosses/Chefe 3.png" id="2_kwue8"]
+
+[node name="BossThree" instance=ExtResource("1_vfrbb")]
+scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kwue8")
+
+[node name="MoveComponent" parent="." index="9"]
+velocity = Vector2(30, 0)
+
+[node name="BorderBounceComponent" parent="." index="10"]
+margin = 60
+
+[node name="Muzzle1" type="Marker2D" parent="." index="11"]
+position = Vector2(-950, 266.667)
+scale = Vector2(16.6667, 16.6667)
+
+[node name="Muzzle2" type="Marker2D" parent="." index="12"]
+position = Vector2(-750, 450)
+scale = Vector2(277.778, 277.778)
+
+[node name="Muzzle3" type="Marker2D" parent="." index="13"]
+position = Vector2(-466.667, 333.333)
+
+[node name="Muzzle4" type="Marker2D" parent="." index="14"]
+position = Vector2(-233.333, 450)
+
+[node name="Muzzle5" type="Marker2D" parent="." index="15"]
+position = Vector2(250, 450)
+
+[node name="Muzzle6" type="Marker2D" parent="." index="16"]
+position = Vector2(466.667, 333.333)
+
+[node name="Muzzle7" type="Marker2D" parent="." index="17"]
+position = Vector2(750, 450)
+
+[node name="Muzzle8" type="Marker2D" parent="." index="18"]
+position = Vector2(950, 266.667)
