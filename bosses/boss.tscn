@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmnpmcfnvcdqo"]
+[gd_scene load_steps=12 format=3 uid="uid://dmnpmcfnvcdqo"]
 
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_em654"]
 [ext_resource type="Script" path="res://bosses/boss.gd" id="1_w2ps1"]
@@ -9,9 +9,8 @@
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="6_cqq2k"]
 [ext_resource type="Script" path="res://components/score_component.gd" id="7_bh3ws"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="8_q1qa5"]
-[ext_resource type="Script" path="res://components/flash_component.gd" id="10_1goqj"]
-[ext_resource type="Script" path="res://components/scale_component.gd" id="11_bk5li"]
-[ext_resource type="Script" path="res://components/shake_component.gd" id="12_u1nfp"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="10_3fycj"]
+[ext_resource type="Script" path="res://components/border_bounce_component.gd" id="11_a5fc6"]
 
 [node name="Boss" type="Node2D"]
 script = ExtResource("1_w2ps1")
@@ -52,11 +51,11 @@ game_stats = ExtResource("8_q1qa5")
 [node name="FireRateTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="FlashComponent" type="Node" parent="."]
-script = ExtResource("10_1goqj")
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("10_3fycj")
+actor = NodePath("..")
 
-[node name="ScaleComponent" type="Node" parent="."]
-script = ExtResource("11_bk5li")
-
-[node name="ShakeComponent" type="Node" parent="."]
-script = ExtResource("12_u1nfp")
+[node name="BorderBounceComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "move_component")]
+script = ExtResource("11_a5fc6")
+actor = NodePath("..")
+move_component = NodePath("../MoveComponent")

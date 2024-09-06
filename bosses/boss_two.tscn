@@ -32,33 +32,20 @@ adjust_amount = 10
 [node name="FireRateTimer" parent="." index="8"]
 wait_time = 1.5
 
-[node name="FlashComponent" parent="." index="9" node_paths=PackedStringArray("sprite")]
-sprite = NodePath("../Sprite2D")
-flash_duration = 0.01
-
-[node name="ScaleComponent" parent="." index="10" node_paths=PackedStringArray("sprite")]
-sprite = NodePath("../Sprite2D")
-scale_amount = Vector2(0.1, 0.1)
-
-[node name="ShakeComponent" parent="." index="11" node_paths=PackedStringArray("node")]
-node = NodePath("..")
-shake_amount = 0.1
-shake_duration = 0.1
-
-[node name="Muzzle1" type="Marker2D" parent="." index="12"]
+[node name="Muzzle1" type="Marker2D" parent="." index="11"]
 position = Vector2(38, 57)
 
-[node name="Muzzle2" type="Marker2D" parent="." index="13"]
+[node name="Muzzle2" type="Marker2D" parent="." index="12"]
 position = Vector2(54, 59)
 
-[node name="Muzzle3" type="Marker2D" parent="." index="14"]
+[node name="Muzzle3" type="Marker2D" parent="." index="13"]
 position = Vector2(74, 57)
 
-[node name="Muzzle4" type="Marker2D" parent="." index="15"]
+[node name="Muzzle4" type="Marker2D" parent="." index="14"]
 position = Vector2(90, 58)
 
-[node name="Muzzle5" type="Marker2D" parent="." index="16"]
+[node name="Muzzle5" type="Marker2D" parent="." index="15"]
 position = Vector2(110, 60)
 
-[node name="Muzzle6" type="Marker2D" parent="." index="17"]
+[node name="Muzzle6" type="Marker2D" parent="." index="16"]
 position = Vector2(127, 58)

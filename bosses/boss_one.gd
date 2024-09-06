@@ -17,4 +17,3 @@ func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
 	laserboss_sfx.play()
-	scale_component.tween_scale()
