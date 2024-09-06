@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=29 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bbnias1xayh0n" path="res://enemy_ships/squads/level_three/squad_twelve.tscn" id="20_rfb10"]
 [ext_resource type="PackedScene" uid="uid://3ayh3a80ppyu" path="res://enemy_ships/squads/level_three/squad_eleven.tscn" id="20_yl0ca"]
 [ext_resource type="PackedScene" uid="uid://dcwg550orgr2q" path="res://bosses/boss_three.tscn" id="25_iqd7j"]
+[ext_resource type="PackedScene" uid="uid://c0p3lvrvcsiy6" path="res://enemy_ships/enemy_four.tscn" id="26_ljioo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
 shader = ExtResource("4_oqdda")
@@ -115,3 +116,6 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
+
+[node name="EnemyFour" parent="." instance=ExtResource("26_ljioo")]
+position = Vector2(72, 72)

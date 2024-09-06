@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0p3lvrvcsiy6"]
+
+[ext_resource type="PackedScene" uid="uid://d3fdd3hdc7p1q" path="res://enemy_ships/enemy.tscn" id="1_n7etl"]
+[ext_resource type="Texture2D" uid="uid://dxn2osarp04fb" path="res://assets/enemies/four/ship.png" id="2_wwq6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_122ma"]
+atlas = ExtResource("2_wwq6w")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t3po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_122ma")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyFour" instance=ExtResource("1_n7etl")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_5t3po")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 40
+damage = 15.0
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 40)
+
+[node name="ScoreComponent" parent="." index="13"]
+adjust_amount = 4
+
+[node name="LeftMuzzle" type="Marker2D" parent="." index="20"]
+position = Vector2(-6, 14)
+
+[node name="RightMuzzle" type="Marker2D" parent="." index="21"]
+position = Vector2(6, 14)
