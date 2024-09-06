@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dto03mjk66ds4"]
+
+[ext_resource type="PackedScene" uid="uid://dea0uuqitw0mg" path="res://enemy_ships/enemy_three.tscn" id="1_l1e56"]
+[ext_resource type="PackedScene" uid="uid://c0p3lvrvcsiy6" path="res://enemy_ships/enemy_four.tscn" id="2_v024f"]
+
+[node name="Squad14" type="Node2D"]
+
+[node name="EnemyThree" parent="." instance=ExtResource("1_l1e56")]
+position = Vector2(-21, 16)
+
+[node name="EnemyThree2" parent="." instance=ExtResource("1_l1e56")]
+position = Vector2(23, 15)
+
+[node name="EnemyFour" parent="." instance=ExtResource("2_v024f")]
+position = Vector2(0, -20)

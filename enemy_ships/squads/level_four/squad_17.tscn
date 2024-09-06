@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqv1sl1x7ld58"]
+
+[ext_resource type="PackedScene" uid="uid://cs6vlk88ooliv" path="res://enemy_ships/enemy_two.tscn" id="1_ng5kq"]
+[ext_resource type="PackedScene" uid="uid://dea0uuqitw0mg" path="res://enemy_ships/enemy_three.tscn" id="2_q5dey"]
+[ext_resource type="PackedScene" uid="uid://c0p3lvrvcsiy6" path="res://enemy_ships/enemy_four.tscn" id="3_ct0eb"]
+[ext_resource type="PackedScene" uid="uid://cc436mt0iwl8c" path="res://enemy_ships/enemy_one.tscn" id="4_4xdb7"]
+
+[node name="Squad17" type="Node2D"]
+
+[node name="EnemyTwo" parent="." instance=ExtResource("1_ng5kq")]
+position = Vector2(0, 12)
+
+[node name="EnemyTwo2" parent="." instance=ExtResource("1_ng5kq")]
+position = Vector2(-30, 12)
+
+[node name="EnemyTwo3" parent="." instance=ExtResource("1_ng5kq")]
+position = Vector2(31, 12)
+
+[node name="EnemyTwo4" parent="." instance=ExtResource("1_ng5kq")]
+position = Vector2(-60, 12)
+
+[node name="EnemyTwo5" parent="." instance=ExtResource("1_ng5kq")]
+position = Vector2(60, 12)
+
+[node name="EnemyThree" parent="." instance=ExtResource("2_q5dey")]
+position = Vector2(-24, -16)
+
+[node name="EnemyThree2" parent="." instance=ExtResource("2_q5dey")]
+position = Vector2(20, -16)
+
+[node name="EnemyFour" parent="." instance=ExtResource("3_ct0eb")]
+position = Vector2(-1, -52)
+
+[node name="EnemyFour2" parent="." instance=ExtResource("3_ct0eb")]
+position = Vector2(-30, -92)
+
+[node name="EnemyFour3" parent="." instance=ExtResource("3_ct0eb")]
+position = Vector2(38, -92)
+
+[node name="EnemyFour4" parent="." instance=ExtResource("3_ct0eb")]
+position = Vector2(1, -136)
+
+[node name="EnemyOne" parent="." instance=ExtResource("4_4xdb7")]
+position = Vector2(4, -93)
