@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=29 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ocddw6fj5kvn" path="res://enemy_ships/squads/level_three/squad_ten.tscn" id="20_nrgeq"]
 [ext_resource type="PackedScene" uid="uid://bbnias1xayh0n" path="res://enemy_ships/squads/level_three/squad_twelve.tscn" id="20_rfb10"]
 [ext_resource type="PackedScene" uid="uid://3ayh3a80ppyu" path="res://enemy_ships/squads/level_three/squad_eleven.tscn" id="20_yl0ca"]
+[ext_resource type="PackedScene" uid="uid://c6a0l8oaauwdp" path="res://enemy_ships/squads/level_four/squad_13.tscn" id="21_p26lr"]
 [ext_resource type="PackedScene" uid="uid://dcwg550orgr2q" path="res://bosses/boss_three.tscn" id="25_iqd7j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
@@ -105,6 +106,7 @@ SquadNineScene = ExtResource("20_b0f0m")
 SquadTenScene = ExtResource("20_nrgeq")
 SquadElevenScene = ExtResource("20_yl0ca")
 SquadTwelveScene = ExtResource("20_rfb10")
+Squad13Scene = ExtResource("21_p26lr")
 BossOneScene = ExtResource("9_gcal7")
 BossTwoScene = ExtResource("19_12smg")
 BossThreeScene = ExtResource("25_iqd7j")

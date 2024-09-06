@@ -72,3 +72,7 @@ autostart = true
 process_mode = 4
 wait_time = 7.0
 autostart = true
+
+[node name="Squad13SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
