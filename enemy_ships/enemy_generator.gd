@@ -87,7 +87,7 @@ func _ready():
 					squad_one_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 					squad_three_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-					spawn_fixed(BossOneScene, Vector2(-3, 7))
+					spawn_fixed(BossOneScene, Vector2(90, 45))
 				
 				
 		if game_stats.level == 2:
@@ -120,7 +120,7 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				spawn_fixed(BossTwoScene, Vector2(-3, 7))		
+				spawn_fixed(BossTwoScene, Vector2(90, 30))		
 				
 				
 				

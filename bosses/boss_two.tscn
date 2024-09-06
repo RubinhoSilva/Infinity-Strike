@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dabapskee12jh" path="res://projectiles/boss/laser_two.tscn" id="4_fihw4"]
 
 [node name="BossTwo" instance=ExtResource("1_wrkhd")]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_kw1jn")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(82, 40)
+position = Vector2(1, 10)
 scale = Vector2(1.13756, 1)
 texture = ExtResource("3_yl8vv")
 
@@ -17,35 +18,48 @@ texture = ExtResource("3_yl8vv")
 health = 2000
 damage = 20.0
 
+[node name="HurtboxComponent" parent="." index="2"]
+position = Vector2(-81, -30)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]
 polygon = PackedVector2Array(21, 70, 9, 58, 9, 50, 16, 40, 21, 35, 25, 34, 31, 33, 33, 31, 31, 30, 27, 26, 23, 27, 13, 36, 8, 34, 10, 26, 12, 16, 19, 10, 25, 9, 34, 7, 45, 15, 63, 8, 103, 8, 115, 15, 120, 15, 127, 7, 140, 7, 151, 12, 154, 23, 156, 32, 152, 36, 138, 27, 134, 30, 146, 37, 150, 41, 154, 47, 154, 52, 155, 58, 143, 70, 139, 68, 138, 64, 141, 62, 144, 60, 139, 55, 130, 54, 126, 58, 119, 50, 116, 50, 116, 54, 114, 54, 114, 57, 112, 58, 112, 60, 109, 60, 109, 58, 108, 58, 107, 52, 105, 52, 104, 48, 103, 48, 102, 44, 98, 44, 97, 46, 96, 46, 96, 47, 94, 48, 94, 56, 92, 56, 91, 59, 89, 58, 89, 56, 86, 56, 86, 53, 85, 52, 84, 40, 80, 40, 80, 52, 78, 52, 78, 56, 76, 56, 76, 58, 73, 58, 73, 56, 71, 56, 70, 49, 68, 49, 68, 47, 64, 44, 62, 44, 61, 48, 60, 48, 60, 52, 58, 52, 58, 58, 55, 58, 55, 60, 53, 60, 52, 58, 51, 58, 50, 55, 48, 54, 48, 51, 43, 50, 44, 54, 40, 54, 41, 56, 39, 56, 39, 58, 37, 58, 36, 56, 34, 56, 34, 54, 25, 54, 25, 57, 23, 56, 22, 58, 21, 58, 21, 61, 23, 61, 23, 63, 26, 64, 26, 67, 23, 68)
+
+[node name="HitboxComponent" parent="." index="3"]
+position = Vector2(-81, -30)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(21, 70, 9, 58, 9, 50, 16, 40, 21, 35, 25, 34, 31, 33, 33, 31, 31, 30, 27, 26, 23, 27, 13, 36, 8, 34, 10, 26, 12, 16, 19, 10, 25, 9, 34, 7, 45, 15, 63, 8, 103, 8, 115, 15, 120, 15, 127, 7, 140, 7, 151, 12, 154, 23, 156, 32, 152, 36, 138, 27, 134, 30, 146, 37, 150, 41, 154, 47, 154, 52, 155, 58, 143, 70, 139, 68, 138, 64, 141, 62, 144, 60, 139, 55, 130, 54, 126, 58, 119, 50, 116, 50, 116, 54, 114, 54, 114, 57, 112, 58, 112, 60, 109, 60, 109, 58, 108, 58, 107, 52, 105, 52, 104, 48, 103, 48, 102, 44, 98, 44, 97, 46, 96, 46, 96, 47, 94, 48, 94, 56, 92, 56, 91, 59, 89, 58, 89, 56, 86, 56, 86, 53, 85, 52, 84, 40, 80, 40, 80, 52, 78, 52, 78, 56, 76, 56, 76, 58, 73, 58, 73, 56, 71, 56, 70, 49, 68, 49, 68, 47, 64, 44, 62, 44, 61, 48, 60, 48, 60, 52, 58, 52, 58, 58, 55, 58, 55, 60, 53, 60, 52, 58, 51, 58, 50, 55, 48, 54, 48, 51, 43, 50, 44, 54, 40, 54, 41, 56, 39, 56, 39, 58, 37, 58, 36, 56, 34, 56, 34, 54, 25, 54, 25, 57, 23, 56, 22, 58, 21, 58, 21, 61, 23, 61, 23, 63, 26, 64, 26, 67, 23, 68)
 
 [node name="SpawnerComponent" parent="." index="5"]
+position = Vector2(-81, -30)
 scene = ExtResource("4_fihw4")
 
 [node name="ScoreComponent" parent="." index="7"]
 adjust_amount = 10
 
 [node name="FireRateTimer" parent="." index="8"]
-wait_time = 1.5
+wait_time = 1.2
+
+[node name="MoveComponent" parent="." index="9"]
+velocity = Vector2(20, 0)
+
+[node name="BorderBounceComponent" parent="." index="10"]
+margin = 55
 
 [node name="Muzzle1" type="Marker2D" parent="." index="11"]
-position = Vector2(38, 57)
+position = Vector2(-43, 27)
 
 [node name="Muzzle2" type="Marker2D" parent="." index="12"]
-position = Vector2(54, 59)
+position = Vector2(-27, 29)
 
 [node name="Muzzle3" type="Marker2D" parent="." index="13"]
-position = Vector2(74, 57)
+position = Vector2(-7, 27)
 
 [node name="Muzzle4" type="Marker2D" parent="." index="14"]
-position = Vector2(90, 58)
+position = Vector2(9, 28)
 
 [node name="Muzzle5" type="Marker2D" parent="." index="15"]
-position = Vector2(110, 60)
+position = Vector2(29, 30)
 
 [node name="Muzzle6" type="Marker2D" parent="." index="16"]
-position = Vector2(127, 58)
+position = Vector2(46, 28)
