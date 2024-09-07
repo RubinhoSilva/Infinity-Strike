@@ -88,3 +88,8 @@ autostart = true
 process_mode = 4
 wait_time = 6.0
 autostart = true
+
+[node name="Squad16SpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 7.0
+autostart = true
