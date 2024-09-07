@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dto03mjk66ds4"]
+[gd_scene load_steps=4 format=3 uid="uid://dto03mjk66ds4"]
 
+[ext_resource type="Script" path="res://enemy_ships/squads/level_four/squad_14.gd" id="1_equ65"]
 [ext_resource type="PackedScene" uid="uid://dea0uuqitw0mg" path="res://enemy_ships/enemy_three.tscn" id="1_l1e56"]
 [ext_resource type="PackedScene" uid="uid://c0p3lvrvcsiy6" path="res://enemy_ships/enemy_four.tscn" id="2_v024f"]
 
 [node name="Squad14" type="Node2D"]
+script = ExtResource("1_equ65")
 
 [node name="EnemyThree" parent="." instance=ExtResource("1_l1e56")]
 position = Vector2(-21, 16)
