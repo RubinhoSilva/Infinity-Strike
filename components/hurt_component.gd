@@ -11,11 +11,11 @@ extends Node
 
 func _ready() -> void:
 	var damage = 5
-	
+		
 	# Connect the hurt signal on the hurtbox component to an anonymous function
 	# that removes health equal to the damage from the hitbox
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
-		# Verifica se o hitbox_component e seu pai são válidos
+		
 		# Verifica se o hitbox_component e seu pai são válidos
 		if is_instance_valid(hitbox_component) and is_instance_valid(hitbox_component.get_parent()):
 			var parent = hitbox_component.get_parent()
@@ -47,7 +47,9 @@ func _ready() -> void:
 		elif hitbox_component.get_parent() is BonusShield:
 			stats_component.shield += 10
 		elif hitbox_component.get_parent() is BonusDamage:
-			stats_component.get_parent().get_node('DamageBonusTimer').wait_time = 10.0 
+			var time = 10.0 * hitbox_component.get_parent().get_parent().game_stats.level
+			
+			stats_component.get_parent().get_node('DamageBonusTimer').wait_time += time
 			stats_component.get_parent().get_node('DamageBonusTimer').start()
 		else:
 			if stats_component.shield == 0:

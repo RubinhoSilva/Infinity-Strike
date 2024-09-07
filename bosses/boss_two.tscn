@@ -15,8 +15,7 @@ scale = Vector2(1.13756, 1)
 texture = ExtResource("3_yl8vv")
 
 [node name="StatsComponent" parent="." index="1"]
-health = 2000
-damage = 20.0
+health = 1000
 
 [node name="HurtboxComponent" parent="." index="2"]
 position = Vector2(-81, -30)

@@ -13,7 +13,7 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_6ls2w")
 
 [node name="MoveComponent" parent="." index="1"]
-velocity = Vector2(0, 200)
+velocity = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("CircleShape2D_bay8u")

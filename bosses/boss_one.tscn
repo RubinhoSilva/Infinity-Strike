@@ -19,6 +19,7 @@ texture = SubResource("CompressedTexture2D_4imla")
 
 [node name="StatsComponent" parent="." index="1"]
 health = 500
+damage = 5.0
 
 [node name="HurtboxComponent" parent="." index="2"]
 position = Vector2(-80, -41)
@@ -40,7 +41,7 @@ position = Vector2(-13, 10)
 position = Vector2(15, 10)
 
 [node name="FireRateTimer" parent="." index="10"]
-wait_time = 0.3
+wait_time = 0.7
 
 [node name="MoveComponent" parent="." index="11"]
 velocity = Vector2(10, 0)

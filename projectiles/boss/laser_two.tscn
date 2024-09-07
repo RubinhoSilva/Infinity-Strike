@@ -13,7 +13,7 @@ rotation = -0.00148127
 texture = ExtResource("2_evyi4")
 
 [node name="MoveComponent" parent="." index="1"]
-velocity = Vector2(0, 100)
+velocity = Vector2(0, 250)
 
 [node name="FlashComponent" parent="." index="4"]
 flash_duration = 0.4
