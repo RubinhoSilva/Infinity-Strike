@@ -76,6 +76,7 @@ destroy_effect_spawner_component = NodePath("../SpawnerComponentDestroy")
 [node name="ScoreComponent" type="Node" parent="."]
 script = ExtResource("13_sqqif")
 game_stats = ExtResource("14_tjbta")
+adjust_amount = null
 
 [node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0

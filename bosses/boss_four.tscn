@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bep6b2h753v26"]
+
+[ext_resource type="PackedScene" uid="uid://dmnpmcfnvcdqo" path="res://bosses/boss.tscn" id="1_sr8jt"]
+[ext_resource type="Script" path="res://bosses/boss_four.gd" id="2_egud0"]
+[ext_resource type="Texture2D" uid="uid://cokhrf610mtkx" path="res://assets/bosses/boss_four.png" id="2_spl5y"]
+
+[node name="BossFour" instance=ExtResource("1_sr8jt")]
+scale = Vector2(0.08, 0.08)
+script = ExtResource("2_egud0")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_spl5y")
+
+[node name="ScoreComponent" parent="." index="7"]
+adjust_amount = null

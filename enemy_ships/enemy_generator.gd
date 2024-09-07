@@ -21,6 +21,7 @@ extends Node2D
 @export var BossOneScene: PackedScene
 @export var BossTwoScene: PackedScene
 @export var BossThreeScene: PackedScene
+@export var BossFourScene: PackedScene
 
 @export var BonusRandomScene: PackedScene
 
@@ -192,7 +193,7 @@ func _ready():
 				squad_14_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_15_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				
-			if 	squad_14_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+			if 	squad_15_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(950, 1050):
 				print('STARTING SQUAD 16')
 				spaw_bonus(BonusRandomScene)
@@ -200,13 +201,23 @@ func _ready():
 				squad_15_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_16_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				
-			if 	squad_17_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+			if 	squad_16_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
 				new_score >= randi_range(1100, 1200):
 				print('STARTING SQUAD 17')
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
 				squad_16_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_17_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+				
+			if 	squad_17_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(1300, 1500):
+				print('BOSS 4')
+				clear_enemies(get_parent())
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_17_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				spawn_fixed(BossFourScene, Vector2(95, 60))		
 	)
 	
 	game_stats.level_changed.connect(func(new_level: int):
@@ -231,6 +242,9 @@ func _ready():
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
 			squad_13_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+		elif new_level == 5:
+			print('BOSS 4 F')
+			#chamar tela de finish
 	)
 
 
