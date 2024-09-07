@@ -16,6 +16,7 @@ extends Node2D
 @export var Squad14Scene: PackedScene
 @export var Squad15Scene: PackedScene
 @export var Squad16Scene: PackedScene
+@export var Squad17Scene: PackedScene
 
 @export var BossOneScene: PackedScene
 @export var BossTwoScene: PackedScene
@@ -42,6 +43,7 @@ extends Node2D
 @onready var squad_14_spawn_timer: Timer = $Squad14SpawnTimer
 @onready var squad_15_spawn_timer: Timer = $Squad15SpawnTimer
 @onready var squad_16_spawn_timer: Timer = $Squad16SpawnTimer
+@onready var squad_17_spawn_timer: Timer = $Squad17SpawnTimer
 
 
 
@@ -75,6 +77,7 @@ func _ready():
 	squad_14_spawn_timer.timeout.connect(spawn_fixed.bind(Squad14Scene, Vector2(75, -25)))
 	squad_15_spawn_timer.timeout.connect(spawn_fixed.bind(Squad15Scene, Vector2(75, -30)))
 	squad_16_spawn_timer.timeout.connect(spawn_fixed.bind(Squad16Scene, Vector2(75, -15)))
+	squad_17_spawn_timer.timeout.connect(spawn_fixed.bind(Squad17Scene, Vector2(80, -25)))
 	
 
 	game_stats.score_changed.connect(func(new_score: int):
@@ -208,6 +211,14 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				squad_15_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				squad_16_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
+				
+			if 	squad_17_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
+				new_score >= randi_range(1100, 1200):
+				print('STARTING SQUAD 17')
+				spaw_bonus(BonusRandomScene)
+				spaw_bonus(BonusRandomScene)
+				squad_16_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
+				squad_17_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 	)
 	
 	game_stats.level_changed.connect(func(new_level: int):
