@@ -81,5 +81,10 @@ autostart = true
 
 [node name="Squad14SpawnTimer" type="Timer" parent="."]
 process_mode = 4
-wait_time = 4.0
+wait_time = 5.0
+autostart = true
+
+[node name="Squad15SpawnTimer" type="Timer" parent="."]
+process_mode = 4
+wait_time = 6.0
 autostart = true
