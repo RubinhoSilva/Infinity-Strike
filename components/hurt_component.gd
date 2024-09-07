@@ -43,14 +43,21 @@ func _ready() -> void:
 		
 		#print(hitbox_component.get_parent().get_node('DamageBonusTimer'))
 		if hitbox_component.get_parent() is BonusHealth:
-			stats_component.health += 20
+			var health = 15.0 * hitbox_component.get_parent().get_parent().game_stats.level
+			
+			stats_component.health += health
 		elif hitbox_component.get_parent() is BonusShield:
-			stats_component.shield += 10
+			var shield = 5 * hitbox_component.get_parent().get_parent().game_stats.level
+			
+			stats_component.shield += shield
 		elif hitbox_component.get_parent() is BonusDamage:
 			var time = 10.0 * hitbox_component.get_parent().get_parent().game_stats.level
 			
-			stats_component.get_parent().get_node('DamageBonusTimer').wait_time += time
-			stats_component.get_parent().get_node('DamageBonusTimer').start()
+			if !stats_component.get_parent().get_node('DamageBonusTimer').is_stopped():
+				stats_component.get_parent().get_node('DamageBonusTimer').wait_time += stats_component.get_parent().get_node('DamageBonusTimer').time_left + time
+			else:
+				stats_component.get_parent().get_node('DamageBonusTimer').wait_time = time
+				stats_component.get_parent().get_node('DamageBonusTimer').start()
 		else:
 			if stats_component.shield == 0:
 				#TOMAR DANO

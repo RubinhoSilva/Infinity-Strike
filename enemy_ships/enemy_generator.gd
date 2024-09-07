@@ -135,7 +135,6 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
-				squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_seven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 				spawn_fixed(BossTwoScene, Vector2(90, 30))		
 				
@@ -172,19 +171,8 @@ func _ready():
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
 				spaw_bonus(BonusRandomScene)
-				squad_four_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 				squad_eleven_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				spawn_fixed(BossThreeScene, Vector2(90, 45))				
-				
-	
-		#if game_stats.level == 4:
-			#if 	squad_eight_spawn_timer.process_mode == Node.PROCESS_MODE_INHERIT and \
-				#new_score >= randi_range(250, 300):
-				#print('STARTING SQUAD 9')
-				#spaw_bonus(BonusRandomScene)
-				#spaw_bonus(BonusRandomScene)
-				#squad_eight_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
-				#squad_nine_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT				
+				spawn_fixed(BossThreeScene, Vector2(90, 45))					
 	
 		
 		if game_stats.level == 4:
@@ -235,7 +223,6 @@ func _ready():
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
 			spaw_bonus(BonusRandomScene)
-			squad_two_spawn_timer.process_mode = Node.PROCESS_MODE_DISABLED
 			squad_eight_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 		elif new_level == 4:
 			print('BOSS 3 F')
