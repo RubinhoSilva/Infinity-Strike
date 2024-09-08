@@ -51,6 +51,9 @@ wait_time = 0.7
 [node name="BorderBounceComponent" parent="." index="17"]
 margin = 10
 
+[node name="damage_sfx" parent="." index="18"]
+volume_db = -20.613
+
 [node name="LeftMuzzle" type="Marker2D" parent="." index="20"]
 position = Vector2(-6, 14)
 

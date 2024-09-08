@@ -51,6 +51,9 @@ adjust_amount = 2
 [node name="FireRateTimer" parent="." index="15"]
 wait_time = 2.0
 
+[node name="damage_sfx" parent="." index="18"]
+volume_db = -20.613
+
 [node name="LeftMuzzle" type="Marker2D" parent="." index="19"]
 position = Vector2(-12, 10)
 scale = Vector2(0.8, 0.7)

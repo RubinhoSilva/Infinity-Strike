@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=36 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -30,6 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://b7lmu1fvx7d6b" path="res://enemy_ships/squads/level_four/squad_15.tscn" id="28_axpbf"]
 [ext_resource type="PackedScene" uid="uid://c7q3m6h2nus45" path="res://enemy_ships/squads/level_four/squad_16.tscn" id="29_sqqwo"]
 [ext_resource type="PackedScene" uid="uid://cqv1sl1x7ld58" path="res://enemy_ships/squads/level_four/squad_17.tscn" id="30_i167w"]
+[ext_resource type="AudioStream" uid="uid://dmeps3bpko67a" path="res://sounds/bg_fase2.wav" id="31_htl70"]
+[ext_resource type="AudioStream" uid="uid://p5a6csxrqfjx" path="res://sounds/bg_fase3.wav" id="32_p7roj"]
+[ext_resource type="AudioStream" uid="uid://cbgvl1ymypaxu" path="res://sounds/bg_fase4.wav" id="33_h42ql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
 shader = ExtResource("4_oqdda")
@@ -125,3 +128,12 @@ game_stats = ExtResource("4_punto")
 stream = ExtResource("10_8nxty")
 volume_db = -10.668
 autoplay = true
+
+[node name="bg_fase2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_htl70")
+
+[node name="bg_fase3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_p7roj")
+
+[node name="bg_fase4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_h42ql")
