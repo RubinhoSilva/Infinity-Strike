@@ -14,6 +14,8 @@ extends Node2D
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 @onready var damage_bonus_timer: Timer = $DamageBonusTimer
 
+@onready var flame_animated_sprite: AnimatedSprite2D = $Anchor/FlameAnimatedSprite
+
 
 func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
@@ -26,11 +28,23 @@ func _ready() -> void:
 	stats_component.no_health.connect(queue_free)
 
 func _process(delta):
+	animate_the_ship()	
 	if !damage_bonus_timer.is_stopped():
 		get_parent().get_node('TimerDamageLabel').text = "Bonus Time: " + str(damage_bonus_timer.time_left)
 		get_parent().get_node('TimerDamageLabel').visible = true  # Mostra o Label quando o timer está ativo
 	else:
 		get_parent().get_node('TimerDamageLabel').visible = false  # Esconde o Label quando o timer está parado
+
+func animate_the_ship() -> void:
+	if move_component.velocity.x < 0:
+		animated_sprite_2d.play("bank_left")
+		flame_animated_sprite.play("bank_left")
+	elif move_component.velocity.x > 0:
+		animated_sprite_2d.play("bank_right")
+		flame_animated_sprite.play("bank_right")
+	else:
+		animated_sprite_2d.play("center")
+		flame_animated_sprite.play("center")
 
 
 func _input(event):
@@ -42,7 +56,6 @@ func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
 	scale_component.tween_scale()
-
 
 func _on_stats_component_health_changed():
 	get_parent().get_node('HealthLabel').text = "Health: " + str(stats_component.health)
