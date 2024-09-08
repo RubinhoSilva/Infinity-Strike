@@ -26,7 +26,7 @@ polygon = PackedVector2Array(-383.333, 300, -316.667, 283.333, -316.667, 316.667
 scene = ExtResource("4_tgerr")
 
 [node name="ScoreComponent" parent="." index="7"]
-adjust_amount = null
+adjust_amount = 1000
 
 [node name="MoveComponent" parent="." index="9"]
 velocity = Vector2(40, 0)

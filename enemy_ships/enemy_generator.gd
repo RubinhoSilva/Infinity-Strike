@@ -244,7 +244,9 @@ func _ready():
 			squad_13_spawn_timer.process_mode = Node.PROCESS_MODE_INHERIT
 		elif new_level == 5:
 			print('BOSS 4 F')
-			#chamar tela de finish
+			
+			await get_tree().create_timer(1.0).timeout
+			get_tree().change_scene_to_file("res://menus/game_sucess.tscn")
 	)
 
 
