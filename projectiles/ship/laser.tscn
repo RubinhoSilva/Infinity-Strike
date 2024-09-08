@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://3c0cr3714r4k"]
 
 [ext_resource type="Script" path="res://projectiles/ship/laser.gd" id="1_s8ymk"]
-[ext_resource type="Texture2D" uid="uid://bps3n0kedeihb" path="res://assets/laser_small.png" id="1_xqkrq"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_jtyhi"]
+[ext_resource type="Texture2D" uid="uid://3gcygkim4slf" path="res://assets/TiroNavePrincipal-Normal (1).png" id="2_qegpc"]
 [ext_resource type="Script" path="res://components/scale_component.gd" id="4_leo26"]
 [ext_resource type="Script" path="res://components/flash_component.gd" id="5_m0t6r"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="6_kqqe3"]
@@ -17,7 +17,7 @@ size = Vector2(4, 8)
 script = ExtResource("1_s8ymk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xqkrq")
+texture = ExtResource("2_qegpc")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("2_jtyhi")
