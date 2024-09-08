@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=37 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://dmeps3bpko67a" path="res://sounds/bg_fase2.wav" id="31_htl70"]
 [ext_resource type="AudioStream" uid="uid://p5a6csxrqfjx" path="res://sounds/bg_fase3.wav" id="32_p7roj"]
 [ext_resource type="AudioStream" uid="uid://cbgvl1ymypaxu" path="res://sounds/bg_fase4.wav" id="33_h42ql"]
+[ext_resource type="PackedScene" uid="uid://bep6b2h753v26" path="res://bosses/boss_four.tscn" id="34_2xnlt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ep840"]
 shader = ExtResource("4_oqdda")
@@ -121,6 +122,7 @@ Squad17Scene = ExtResource("30_i167w")
 BossOneScene = ExtResource("9_gcal7")
 BossTwoScene = ExtResource("19_12smg")
 BossThreeScene = ExtResource("25_iqd7j")
+BossFourScene = ExtResource("34_2xnlt")
 BonusRandomScene = ExtResource("10_ij4jd")
 game_stats = ExtResource("4_punto")
 
@@ -137,3 +139,6 @@ stream = ExtResource("32_p7roj")
 
 [node name="bg_fase4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_h42ql")
+
+[node name="BossFour" parent="." instance=ExtResource("34_2xnlt")]
+position = Vector2(88, 64)
