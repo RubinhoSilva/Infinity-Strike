@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6slfo3ghkpuk"]
+[gd_scene load_steps=6 format=3 uid="uid://6slfo3ghkpuk"]
 
 [ext_resource type="Script" path="res://menus/game_over.gd" id="1_i88yp"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="2_b3can"]
 [ext_resource type="LabelSettings" uid="uid://lyux8pgux32t" path="res://fonts/title_label_settings.tres" id="2_hgl8r"]
 [ext_resource type="LabelSettings" uid="uid://b4kbn4k1bdngv" path="res://fonts/default_label_settings.tres" id="3_k64km"]
+[ext_resource type="Texture2D" uid="uid://b1lsrnrharoj7" path="res://assets/bg_gameover.png" id="5_xut7o"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -20,6 +21,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 6.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -27,6 +32,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Game Over"
 label_settings = ExtResource("2_hgl8r")
@@ -74,3 +80,10 @@ text = "Pressione 'Espaço' para
 voltar ao menu principal"
 label_settings = ExtResource("3_k64km")
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 241.0
+texture = ExtResource("5_xut7o")

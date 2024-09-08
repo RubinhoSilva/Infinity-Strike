@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cly0bmoy4ko5f"]
+[gd_scene load_steps=7 format=3 uid="uid://cly0bmoy4ko5f"]
 
 [ext_resource type="Texture2D" uid="uid://c44xyuodb3g6" path="res://assets/logo_utfpr.png" id="1_l4s0c"]
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_wb0oq"]
 [ext_resource type="LabelSettings" uid="uid://lyux8pgux32t" path="res://fonts/title_label_settings.tres" id="2_h61bn"]
 [ext_resource type="LabelSettings" uid="uid://b4kbn4k1bdngv" path="res://fonts/default_label_settings.tres" id="3_vfbob"]
 [ext_resource type="AudioStream" uid="uid://c3qfxloi7e6v" path="res://sounds/bg_menu.wav" id="5_h2coh"]
+[ext_resource type="Texture2D" uid="uid://bpuo3q2aphrvy" path="res://assets/bg_menu.png" id="6_irxef"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -47,3 +48,11 @@ horizontal_alignment = 1
 stream = ExtResource("5_h2coh")
 volume_db = -9.369
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 240.0
+texture = ExtResource("6_irxef")
+expand_mode = 3
