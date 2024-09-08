@@ -7,7 +7,7 @@
 radius = 80.0
 
 [node name="LaserFour" instance=ExtResource("1_o6rm4")]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_bgqlp")
