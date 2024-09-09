@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://44gxy1sadoje"]
 
 [ext_resource type="Script" path="res://menus/game_over.gd" id="1_a2m4k"]
-[ext_resource type="Texture2D" uid="uid://csvxb322n62ly" path="res://assets/Success.jpeg" id="1_drwkr"]
 [ext_resource type="Resource" uid="uid://bfkadquef4i33" path="res://game_stats.tres" id="2_j50if"]
 [ext_resource type="LabelSettings" uid="uid://lyux8pgux32t" path="res://fonts/title_label_settings.tres" id="3_p53fs"]
 [ext_resource type="LabelSettings" uid="uid://b4kbn4k1bdngv" path="res://fonts/default_label_settings.tres" id="4_m6qkn"]
+[ext_resource type="Texture2D" uid="uid://l2unpxy3rdgf" path="res://assets/Designer (7) (1).jpeg" id="5_v0jky"]
 
 [node name="GameSucess" type="Control"]
 layout_mode = 3
@@ -22,9 +22,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
-offset_top = -4.0
+offset_top = 46.0
 offset_right = 6.0
-offset_bottom = -4.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -84,7 +84,9 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_right = 160.0
-offset_bottom = 241.0
-texture = ExtResource("1_drwkr")
+offset_left = -7.0
+offset_top = -79.0
+offset_right = 176.0
+offset_bottom = 248.0
+texture = ExtResource("5_v0jky")
 expand_mode = 5
