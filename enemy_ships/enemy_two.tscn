@@ -28,7 +28,7 @@ scale = Vector2(0.46875, 0.520833)
 sprite_frames = SubResource("SpriteFrames_we4qq")
 
 [node name="StatsComponent" parent="." index="1"]
-health = 20
+health = 40
 damage = 6.0
 speed = 150
 

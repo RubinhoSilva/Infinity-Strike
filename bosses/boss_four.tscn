@@ -13,7 +13,7 @@ script = ExtResource("2_egud0")
 texture = ExtResource("2_spl5y")
 
 [node name="StatsComponent" parent="." index="1"]
-health = 3000
+health = 4000
 damage = 30.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]

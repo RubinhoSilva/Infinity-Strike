@@ -27,7 +27,7 @@ rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_oj6xm")
 
 [node name="StatsComponent" parent="." index="1"]
-health = 30
+health = 60
 damage = 10.0
 speed = 200
 

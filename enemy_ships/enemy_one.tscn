@@ -37,7 +37,7 @@ sprite_frames = SubResource("SpriteFrames_ijrda")
 animation = &"move"
 
 [node name="StatsComponent" parent="." index="1"]
-health = 10
+health = 20
 damage = 3.0
 
 [node name="MoveComponent" parent="." index="2"]

@@ -18,7 +18,7 @@ scale = Vector2(0.697522, 0.741274)
 texture = SubResource("CompressedTexture2D_4imla")
 
 [node name="StatsComponent" parent="." index="1"]
-health = 500
+health = 1000
 damage = 5.0
 
 [node name="HurtboxComponent" parent="." index="2"]
