@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cybvmmv4i647a"]
+[gd_scene load_steps=39 format=3 uid="uid://cybvmmv4i647a"]
 
 [ext_resource type="PackedScene" uid="uid://b67qjuigi4dvn" path="res://player_ship/ship.tscn" id="1_2yr80"]
 [ext_resource type="PackedScene" uid="uid://s1nqqmdh76yj" path="res://enemy_ships/squads/level_one/squad_one.tscn" id="1_kqohh"]
@@ -42,6 +42,12 @@ shader_parameter/speed = 0.1
 [sub_resource type="LabelSettings" id="LabelSettings_fnahk"]
 font = ExtResource("7_my3fh")
 font_size = 6
+
+[sub_resource type="FontVariation" id="FontVariation_yr80q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gwmr"]
+font = SubResource("FontVariation_yr80q")
+font_size = 4
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_n0vdm")
@@ -87,6 +93,17 @@ label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NewLevelLabel" type="Label" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 21.0
+text = "NÍVEL 1 CONCLUÍDO"
+label_settings = SubResource("LabelSettings_3gwmr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimerDamageLabel" type="Label" parent="."]
 visible = false
 offset_left = 103.0
@@ -97,6 +114,10 @@ text = "DAMAGE"
 label_settings = SubResource("LabelSettings_fnahk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ShowNewLevelLabelTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [node name="Ship" parent="." instance=ExtResource("1_2yr80")]
 position = Vector2(81, 218)
